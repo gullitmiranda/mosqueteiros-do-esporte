@@ -11,23 +11,21 @@ gem "carrierwave"
 gem "fog"
 gem "devise"
 gem "omniauth-facebook"
-gem "oily_png"
 gem "friendly_id"
 gem "simple_form"
 gem "draper"
 gem "rufus-scheduler"
 
-
-
-
 group :assets do
-  gem "compass", "~> 0.13.alpha.0"
+  gem "compass", "~> 0.12.2"
   gem "compass-rails", "~> 1.0.3"
-  gem "sass", "~> 3.2.0.alpha.278"
+  gem "oily_png", "~> 1.0.2"
+  gem "sass", "~> 3.2.3"
   gem "sass-rails", "~> 3.2.5"
-  gem "susy", "~> 1.0.rc.4"
+  gem "susy", "~> 1.0.5"
   gem "coffee-rails", "~> 3.2.2"
-  gem "uglifier", "~> 1.2.4"
+  gem "uglifier", "~> 1.3.0"
+  gem "font_assets", "~> 0.1.2"
 end
 
 group :test do
