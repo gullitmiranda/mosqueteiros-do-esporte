@@ -1,0 +1,16 @@
+@import "active_admin/base"
+@import "css/redactor"
+
+.redactor_box_fullscreen
+  z-index: 120001 !important
+  
+.redactor_box 
+  li
+    margin-bottom: 0 !important
+    
+.admin_paginas
+  .action_items, a[data-method="delete"]
+    display: none
+    
+  .index_as_table .zebra-striped td:last-child
+    width: 105px
