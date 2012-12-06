@@ -15,6 +15,8 @@ gem "friendly_id"
 gem "simple_form"
 gem "draper"
 gem "rufus-scheduler"
+
+
 group :assets do
   gem "compass", "~> 0.13.alpha.0"
   gem "compass-rails", "~> 1.0.3"
@@ -23,6 +25,12 @@ group :assets do
   gem "susy", "~> 1.0.rc.4"
   gem "coffee-rails", "~> 3.2.2"
   gem "uglifier", "~> 1.2.4"
+end
+
+group :test do
+  gem "cucumber-rails"
+  gem "rspec-rails"
+  gem "database_cleaner"
 end
 
 group :development do
