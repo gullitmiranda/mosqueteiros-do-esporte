@@ -10,11 +10,14 @@ gem "mini_magick"
 gem "carrierwave"
 gem "fog"
 gem "devise"
+gem "omniauth-facebook"
 gem "oily_png"
 gem "friendly_id"
 gem "simple_form"
 gem "draper"
 gem "rufus-scheduler"
+
+
 
 
 group :assets do

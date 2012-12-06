@@ -1,4 +1,11 @@
 Mosqueteiros::Application.routes.draw do
+  devise_for :users, sign_out_via: :get, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
+  devise_scope :user do
+    get '/users/connect/:network', to: redirect("/users/auth/%{network}"), as: 'user_omniauth_connect'
+  end
+
+
   get 'frontend/:template' => 'frontend#show'
 
   get 'frontend(/index)' => 'frontend#index'
