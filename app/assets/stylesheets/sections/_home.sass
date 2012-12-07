@@ -170,19 +170,22 @@ section.featured-projects
 
     h1
       color: $orange
-      +adjust-font-size-to(21px)
+      +adjust-font-size-to(20px)
       +adjust-leading-to(1)
     
     p
       color: $gray
       +adjust-font-size-to(15px)
-      +adjust-leading-to(1)
+      +adjust-leading-to(.9)
       +padding-leader(.5)
       +padding-trailer(.5)
   
     .entry-meta
       text-transform: uppercase
-      
+      padding: 0
+      +adjust-font-size-to(12px)
+      +adjust-leading-to(1)
+      +padding-trailer(.5)
       .author
         font-weight: bold
       
@@ -195,3 +198,33 @@ section.featured-projects
     position: relative
     padding-right: gutter(8)
     
+    .chart-pledged
+      background-color: #ddd
+      +border-radius(4px)
+      height: 8px
+      +margin-leader(1)
+      +pie-clearfix
+
+      .chart-pledged-inner
+        background-color: $green
+        +border-radius(4px)
+        height: 8px
+        +hide-text
+    
+    .overview
+      ul
+        +padding-leader(.5)
+        +padding-trailer(.5)
+        li
+          +inline-block
+          width: 33%
+          color: $gray
+          +adjust-font-size-to(10px)
+          +adjust-leading-to(.8)
+          text-transform: uppercase
+          
+          b
+            display: block
+            font-weight: bold
+            +adjust-font-size-to(17px)
+            +adjust-leading-to(1)
