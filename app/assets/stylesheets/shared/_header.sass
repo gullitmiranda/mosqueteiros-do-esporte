@@ -4,12 +4,6 @@
 #header-page
   +min-height(80px)
   position: relative
-
-.note-facebook
-  display: block
-  +adjust-font-size-to(11px)
-  color: $gray-light
-  font-weight: normal
   
 #header-page-inner
   
@@ -148,67 +142,6 @@
             display: block
             +hide-text
             width: 1px
-
-   
-        &.item-activity
-
-          &.new
-            .activity-indicator
-              display: block
-              
-          a
-            color: #8b8b8b
-            background-color: #e4e4e1
-            +inline-block
-            font-weight: bold
-            text-decoration: none
-            position: relative
-            width: 28px
-            height: 28px
-            
-            .activity-indicator
-              +border-radius(50em)
-              width: 8px
-              height: 8px
-              background-color: #00abc1
-              position: absolute
-              top: -4px
-              left: -4px
-              display: none
-              +box-shadow(0 0 0 1px rgba(#fff, .9))
-
-            .activity-text
-              display: block
-              +hide-text
-              width: 1px
-
-            
-            &:before
-              content: ""
-              position: relative
-              top: 6px
-              left: 6px
-              float: left
-              width: 16px
-              height: 16px
-              margin: 0
-              // +small-elements-sprite(icon-alert)
-              +opacity(.3)
-
-            &:active
-              +effect-click-down
-
-            &.active
-              background-color: $link-color
-              color: $white            
-              &:before
-                +opacity(.6)
-
-            &:hover
-              background-color: $link-color
-              color: $white            
-              &:before
-                +opacity(1)
 
         &.item-logout
           a

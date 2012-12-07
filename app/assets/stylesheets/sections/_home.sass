@@ -1,0 +1,107 @@
+#slider-home
+  background-color: #eee
+  position: relative
+  width: 100%
+  +min-height(386px)
+  overflow: hidden
+
+  .slides
+    // Hide the slides before the JS is loaded. Avoids image jumping
+    margin: 0
+  
+  .flex-control-nav
+    bottom: 20px
+    li
+      a
+        width: 12px
+        height: 12px
+        background-color: rgba(#fff, .4)
+        +box-shadow(0 0 2px rgba($black, .7))
+        
+        &.flex-active
+          background-color: #fff
+  
+  .flex-direction-nav a
+    background: none
+
+  img
+    display: block
+    margin: 0 auto
+    width: 100%
+    min-width: 100%
+    +respond-to(smartphones)
+      height: 220px
+  
+  .flex-container
+    
+    ul.slides
+
+      li
+        position: relative
+        
+        &:before
+          content: ""
+          position: absolute
+          top: 0
+          left: 0
+          height: 0
+          width: 100%
+          display: block
+          margin: 0
+          border-top: 1px solid rgba(#000, .15)
+          +box-shadow(rgba(#000, 1) 0 0 3px)
+          z-index: 2
+
+        &.slide
+          position: relative
+          display: none
+    
+        .slide-content
+          position: absolute
+          width: 100%
+          top: 100px
+          left: 10%
+
+          +respond-to(smartphones)
+            top: 40px
+                    
+          .slide-content-inner
+            position: absolute
+            top: 0
+            left: 0
+            width: 50%
+            +respond-to(smartphones)
+              width: 80%
+            +respond-to(tablets)
+              width: 80%
+            +respond-to(desktop-not-wide)
+              width: 80%
+            
+            header
+              h1
+                +adjust-font-size-to(50px)
+                +adjust-leading-to(2.5)
+                color: #fff
+                +text-shadow(rgba(#000, .7) 0 1px 5px)
+                text-transform: uppercase
+              p
+                color: #fff
+                +adjust-font-size-to(18px)
+                +adjust-leading-to(1)
+                +padding-leader(1)
+
+                
+              +respond-to(tablets)
+                h1
+                  +adjust-font-size-to(35px)
+                  +adjust-leading-to(2)
+                  
+              +respond-to(desktop-not-wide)
+                h1
+                  +adjust-font-size-to(35px)
+                  +adjust-leading-to(2)
+                  
+              +respond-to(smartphones)
+                h1
+                  +adjust-font-size-to(27px)
+                  +adjust-leading-to(1.5)

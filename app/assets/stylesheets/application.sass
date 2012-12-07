@@ -5,13 +5,6 @@
 @import "globals/base"
 
 
-// PLUGINS
-// ----------------------------------------/
-// @import "fancybox"
-// @import "responsiveslides"
-// @import "tipsy"
-
-
 // SHARED
 // ----------------------------------------/
 @import "shared/header"
@@ -31,10 +24,17 @@
 @import "components/arrow-box"
 
 
+// PLUGINS
+// ----------------------------------------/
+// @import "fancybox"
+// @import "responsiveslides"
+// @import "tipsy"
+@import "flexslider"
+
 
 // SECTIONS
 // ----------------------------------------/
-// @import "sections/home"
+@import "sections/home"
 
 
 body
@@ -68,6 +68,5 @@ a
 
 // SUSY GRID
 // -----
-#header-page-inner, #content, #footer-page-inner
+#header-page-inner, #footer-page-inner
   +container
-  +box-sizing(content-box)
