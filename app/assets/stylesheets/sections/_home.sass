@@ -107,15 +107,91 @@
                   +adjust-leading-to(1.5)
 
 
+header.section-header
+  h1
+    color: $gray-light
+    +adjust-font-size-to(17px)
+    +adjust-leading-to(1)
+    font-weight: bold
+    text-align: center
+    text-transform: uppercase
+    +box-shadow(0 1px 0 $gray-lighter)
+    +margin-leader(0)
+    +margin-trailer(2)
+
+    span
+      +inline-block
+      background-color: #f8f6f3
+      +adjust-leading-to(2)
+      position: relative
+      bottom: -1.2em
+      padding: 0 .5em
+
 section.featured-projects
   +container
-  h1
-    span
 
-  .project
-    +span-columns(8, 16)
-    +nth-omega(2n, of-type)
-    background-color: $white
-    +box-shadow(0 1px 1px rgba(0,0,0,.2))
-    +margin-trailer(1)
+// Project box styles
+.project
+  +span-columns(8, 16)
+  +nth-omega(2n, of-type)
+  background-color: $white
+  +box-shadow(0 1px 1px rgba(0,0,0,.2))
+  +margin-trailer(1)
+  
+  a
+    text-decoration: none
 
+  .project-image
+    +span-columns(3, 8)
+    +pie-clearfix
+    position: relative
+    z-index: 1
+
+    img
+      float: left
+  
+  .project-details
+    +span-columns(5 omega, 8)
+    +padding-leader(1)
+    position: relative
+
+    &:after
+      position: absolute
+      content: ""
+      width: 110%
+      height: 1px
+      margin-left: -10%
+      display: block
+      border-bottom: 1px solid $gray-lighter
+      bottom: 0
+
+    h1, p
+      padding-right: gutter(8)
+
+    h1
+      color: $orange
+      +adjust-font-size-to(21px)
+      +adjust-leading-to(1)
+    
+    p
+      color: $gray
+      +adjust-font-size-to(15px)
+      +adjust-leading-to(1)
+      +padding-leader(.5)
+      +padding-trailer(.5)
+  
+    .entry-meta
+      text-transform: uppercase
+      
+      .author
+        font-weight: bold
+      
+      .place
+        &:before
+          content: ", "
+  
+  .project-stats
+    +span-columns(5 omega, 8)
+    position: relative
+    padding-right: gutter(8)
+    
