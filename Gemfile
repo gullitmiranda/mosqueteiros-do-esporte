@@ -15,6 +15,9 @@ gem "friendly_id"
 gem "simple_form"
 gem "draper"
 gem "rufus-scheduler"
+gem "meta_search"
+gem "kaminari"
+gem "newrelic_rpm"
 
 group :assets do
   gem "compass", "~> 0.12.2"
@@ -29,11 +32,14 @@ group :assets do
 end
 
 group :test do
-  gem "cucumber-rails"
   gem "rspec-rails"
-  gem "database_cleaner"
+  gem "factory_girl_rails"
+  gem "shoulda-matchers"
 end
 
 group :development do
   gem "foreman"
+  gem "rspec-rails"
 end
+
+gem 'activeadmin', git: 'https://github.com/startae/activepress.git', branch: '022d02c8f168eecbe6872e3d1782dd4709ebe47c'

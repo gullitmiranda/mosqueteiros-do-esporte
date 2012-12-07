@@ -1,5 +1,5 @@
 @import "active_admin/base"
-@import "css/redactor"
+@import "redactor"
 
 .redactor_box_fullscreen
   z-index: 120001 !important
@@ -14,3 +14,15 @@
     
   .index_as_table .zebra-striped td:last-child
     width: 105px
+
+.content
+  textarea#project_video, textarea#project_excerpt
+    height: 150px
+
+  input[type=text], textarea
+    width: 600px
+
+#redactor_modal
+  label
+    width: auto
+    text-align: left
