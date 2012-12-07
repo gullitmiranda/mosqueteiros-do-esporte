@@ -25,8 +25,10 @@ html.no-js lang="#{{I18n.locale}}"
     == stylesheet_link_tag 'application', media: 'all'
     == javascript_include_tag 'close_for_facebook_login'
     == javascript_include_tag 'modernizr'
+    /[if lt IE 9]
+      == javascript_include_tag 'html5shiv-printshiv'
   
-  body class="#{@page_class} #{@item_menu}"
+  body class="#{{@page_class}} #{{@item_menu}}"
     == render 'layouts/browser_warning'
 
     section.page
@@ -38,7 +40,7 @@ html.no-js lang="#{{I18n.locale}}"
         - if alert.present?
           .alert == alert
 
-        = yield
+        == yield
 
       == render 'layouts/footer'
 
