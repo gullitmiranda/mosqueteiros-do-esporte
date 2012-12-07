@@ -1,7 +1,7 @@
 # encoding: utf-8
 require 'carrierwave/processing/mime_types'
 
-class UserAvatarUploader < CarrierWave::Uploader::Base
+class ProjectImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MimeTypes
   include CarrierWave::MiniMagick
 
@@ -12,12 +12,12 @@ class UserAvatarUploader < CarrierWave::Uploader::Base
   process :set_content_type
   process quality: 60
 
-  version :thumb do
-    process resize_to_fill: [48, 48]
+  version :featured do
+    process resize_to_fill: [320, 520]
   end
 
   version :regular do
-    process resize_to_fill: [64, 64]
+    process resize_to_fill: [1280, 860]
   end
 
   def extension_white_list
@@ -25,6 +25,6 @@ class UserAvatarUploader < CarrierWave::Uploader::Base
   end
 
   def filename
-    "avatar#{File.extname(original_filename)}" if original_filename
+    "image#{File.extname(original_filename)}" if original_filename
   end
 end
