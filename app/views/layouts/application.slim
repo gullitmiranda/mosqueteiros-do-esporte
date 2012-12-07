@@ -35,10 +35,10 @@ html.no-js lang="#{{I18n.locale}}"
       == render 'layouts/header'
 
       #content
-        - if notice.present?
-          .notice == notice
-        - if alert.present?
-          .alert == alert
+        / - if notice.present?
+        /   .notice == notice
+        / - if alert.present?
+        /   .alert == alert
 
         == yield
 
