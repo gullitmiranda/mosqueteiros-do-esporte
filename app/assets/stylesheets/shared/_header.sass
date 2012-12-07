@@ -38,14 +38,27 @@
     +padding-leader(1)
     +padding-trailer(.5)
     padding-left: 10px
+    font-weight: 700
+    +adjust-font-size-to(17px)
+    +adjust-leading-to(1)
 
     a
-      color: #58595b
+      color: #888481
+      text-decoration: none
+      display: block
+
       span
         display: block
+        font-weight: 400
+        +adjust-font-size-to(14px)
+        +adjust-leading-to(.8)
+        color: #b5b2af
 
       &:hover
-        color: $link-color
+        color: darken(#888481, 20%)
+
+        span
+          color: darken(#888481, 20%)
 
       &:active
         +effect-click-down
