@@ -33,14 +33,16 @@
 
 
   nav.nav-page
-    +span-columns(4 ,12)
-    +push(2)
-    +padding-leader(1.5)
+    +span-columns(8 ,16)
+    +push(4,16)
+    +padding-leader(1)
     +padding-trailer(.5)
-    padding-left: 20px
+    padding-left: 10px
 
     a
       color: #58595b
+      span
+        display: block
 
       &:hover
         color: $link-color
@@ -50,26 +52,20 @@
 
     ul
       +inline-list
-      +adjust-leading-to(2)
+      +adjust-leading-to(.9)
 
       li
-        margin-right: 10px
+        +inline-block
+        margin-right: 30px
 
-        &:after
-          content: "/"
-          position: relative
-          color: $gray-lighter
-          color: rgba($gray-dark, .3)
-          padding-left: 10px
-
-        &:last-child:after
-          content: ""
+        &:last-of-type
+          margin-right: 0
 
 
   nav.nav-user
     +padding-leader(1.5)
     +padding-trailer(.5)
-    +span-columns(6 omega,12)
+    +span-columns(4 omega, 16)
     
     .info
       color: $gray-light
