@@ -1,4 +1,3 @@
-
 pt-BR:
   date:
     abbr_day_names:
@@ -206,9 +205,24 @@ pt-BR:
   activerecord:
     models:
       user: Usuário
+      project: Projeto
     attributes:
       user:
         password: Senha
+      project:
+        title: Título
+        created_at: Cadastrado em
+        updated_at: Atualizdo em
+        image: Imagem
+        body: Conteúdo
+        name: Nome
+        location: Cidade-UF
+        video: Vídeo
+        excerpt: Resumo
+        goal: Valor do Projeto
+        expires_at: Prazo
+        published: Publicado
+        featured: Destaque
     errors:
       <<: *errors
   views:
