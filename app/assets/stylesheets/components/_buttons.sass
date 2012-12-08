@@ -1,27 +1,27 @@
 //NORMAL
-$button-border:                      #a7a8ab !default
-$button-background-solid:            #fcfcfc !default
-$button-background-gradient:         linear-gradient(#fcfcfc, #dfe0e3) !default
-$button-text:                        $gray-dark !default
+$button-border:                      #888 !default
+$button-background-solid:            #fff !default
+$button-background-gradient:         linear-gradient(#fff, #f8f6f3) !default
+$button-text:                        $gray !default
 $button-text-shadow:                 rgba($white, .6) 0 1px 0 !default
-$button-box-shadow:                  0 1px 2px rgba($black, .2), inset 0 1px 0 0 rgba($white, .15) !default
-$button-box-shadow-retina:           inset 0 0 1px rgba($black, .9), 0 1px 1px rgba($black, .2) !default
+$button-box-shadow:                  0 1px 0 rgba(0,0,0,.3) !default
+$button-box-shadow-retina:           0 0 2px rgba(0,0,0,.3) !default
 //HOVER
 $button-border-hover:                darken($button-border, 8%) !default
 $button-background-solid-hover:      darken($button-background-solid, 6%) !default
-$button-background-gradient-hover:   linear-gradient(darken(#fcfcfc, 6%), darken(#dfe0e3, 8%)) !default
+$button-background-gradient-hover:   linear-gradient(darken(#fff, 6%), darken(#f8f6f3, 8%)) !default
 $button-text-hover:                  darken($button-text, 100%) !default
 $button-text-shadow-hover:           rgba($white, .6) 0 1px 0 !default
-$button-box-shadow-hover:            0 1px 2px rgba($black, .2), inset 0 1px 0 0 rgba($white, .15) !default
-$button-box-shadow-retina-hover:     inset 0 0 1px rgba($black, .9), 0 1px 1px rgba($black, .2) !default
+$button-box-shadow-hover:            0 1px 0 rgba(0,0,0,.3) !default
+$button-box-shadow-retina-hover:     0 0 2px rgba(0,0,0,.6) !default
 //Active
 $button-border-active:                darken($button-border, 15%) !default
 $button-background-solid-active:      darken($button-background-solid, 8%) !default
-$button-background-gradient-active:   linear-gradient(darken(#dfe0e3, 8%), darken(#fcfcfc, 6%)) !default
+$button-background-gradient-active:   linear-gradient(darken(#f8f6f3, 8%), darken(#fff, 6%)) !default
 $button-text-active:                  darken($button-text, 100%) !default
 $button-text-shadow-active:           rgba($white, .6) 0 1px 0 !default
-$button-box-shadow-active:            0 1px 0 0 rgba($white, .6), inset 0 1px 3px 0 rgba($gray-darker, .7) !default
-$button-box-shadow-retina-active:     inset 0 0 1px rgba($black, .9), 0 1px 1px rgba($black, .2) !default
+$button-box-shadow-active:            0 1px 0 rgba(0,0,0,.3) !default
+$button-box-shadow-retina-active:     0 0 2px rgba(0,0,0,.6) !default
 
 
 
@@ -45,8 +45,8 @@ $button-box-shadow-retina-active:     inset 0 0 1px rgba($black, .9), 0 1px 1px 
   @extend .normalise-button
   //TYPOGRAPHY
   +sans-serif
-  +adjust-font-size-to(13px)
-  +adjust-leading-to(1,20px)
+  +adjust-font-size-to(16px)
+  +adjust-leading-to(1)
   font-weight: bold
   //STRUCTURE
   +padding-leader(.6)
@@ -57,7 +57,7 @@ $button-box-shadow-retina-active:     inset 0 0 1px rgba($black, .9), 0 1px 1px 
   position: relative
   overflow: visible
   //STYLING
-  +border-radius(3px)
+  +border-radius(4px)
   border: 1px solid $button-border
   +background-with-css2-fallback($button-background-gradient, $button-background-solid)
   color: $button-text
