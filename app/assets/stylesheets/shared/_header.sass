@@ -6,7 +6,8 @@
   position: relative
   
 #header-page-inner
-  
+  +container
+
   .logo-page
     width: 208px
     height: 34px
@@ -31,6 +32,7 @@
     font-weight: 700
     +adjust-font-size-to(17px)
     +adjust-leading-to(1)
+    text-transform: uppercase
 
     a
       color: #888481
@@ -43,6 +45,7 @@
         +adjust-font-size-to(14px)
         +adjust-leading-to(.8)
         color: #b5b2af
+        text-transform: lowercase
 
       &:hover
         color: darken(#888481, 20%)
