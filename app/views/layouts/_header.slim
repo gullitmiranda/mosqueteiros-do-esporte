@@ -6,15 +6,15 @@ header#header-page role="banner"
       .logo-page Mosqueteiros do Esporte
     - else
       .logo-page
-        a href="#{root_path}" title="Mosqueteiros do Esporte" Mosqueteiros do Esporte
+        a href="#{{root_path}}" title="Mosqueteiros do Esporte" Mosqueteiros do Esporte
 
     nav.nav-page role="navigation"
       ul
-        li
+        li.o_que
           a href="#{{@projects_path}}" title="O que é o mosqueteiros?" O que é <span>o mosqueteiros?</span>
-        li
+        li.conheca
           a href="{{@projects_path}}" title="Conheça grandes esportistas" Conheça <span>grandes esportistas</span>
-        li
+        li.seja_um
           a href="{{@projects_path}}" title="Seja um atleta patrocinado" Seja um <span>atleta patrocinado</span>
 
     nav.nav-user role="navigation"
@@ -28,7 +28,7 @@ header#header-page role="banner"
           li.item-username <b>#{{current_user.name.split(" ").first}}</b>
 
           li.item-logout
-            a href="#{destroy_user_session_path}" title="Sair" Sair
+            a href="#{{destroy_user_session_path}}" title="Sair" Sair
         - else
           li.item-login
-            a href="#{user_omniauth_connect_path(:facebook)}" title="Entrar com o Facebook" class="popup button facebook-connect" data-width="600" data-height="400" Entrar com Facebook
+            a href="#{{user_omniauth_connect_path(:facebook)}}" title="Entrar com o Facebook" class="popup button facebook-connect" data-width="600" data-height="400" Entrar com Facebook
