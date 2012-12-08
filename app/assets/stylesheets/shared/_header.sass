@@ -66,8 +66,8 @@
 
 
   nav.nav-user
-    +padding-leader(1.5)
-    +padding-trailer(.5)
+    +padding-leader(1)
+    +padding-trailer(1)
     +span-columns(4 omega, 16)
     
     .info
@@ -83,6 +83,7 @@
         float: left
         display: inline
         margin-left: 5px
+        
         &.item-avatar
           vertical-align: middle
           padding-right: 5px
@@ -154,8 +155,10 @@
             +padding-leader(.2)
             +padding-trailer(.2)
             text-decoration: none
+            
             &:active
               +effect-click-down
+            
             &:hover
               background-color: $link-color
               color: #333
