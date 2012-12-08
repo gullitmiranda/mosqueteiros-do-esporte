@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 ActiveAdmin.register Project do
   menu label: 'Projetos'
   
@@ -10,6 +12,12 @@ ActiveAdmin.register Project do
   index do
     column :id
     column :title
+    column :published, sortable: :published do |project|
+      (project.published? ? '<span class="label success">Sim</span>' : '<span class="label">Não</span>').html_safe
+    end
+    column :featured, sortable: :featured do |project|
+      (project.featured? ? '<span class="label success">Sim</span>' : '<span class="label">Não</span>').html_safe
+    end
     column :goal, sortable: :goal do |project|
       number_to_currency(project.goal)
     end
