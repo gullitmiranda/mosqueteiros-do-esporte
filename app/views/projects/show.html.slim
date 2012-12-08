@@ -1,0 +1,10 @@
+section.featured-projects
+  header.section-header
+    h1 = @project.title
+  
+  - if @project.video.present?
+    = @project.video.try(:html_safe)
+  - else
+    = image_tag(@project.image.regular, width: 640)
+
+  = @project.body.try(:html_safe)

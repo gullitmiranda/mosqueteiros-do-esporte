@@ -24,29 +24,8 @@
 section.featured-projects
   header.section-header
     h1 <span>Atletas em Destaque</span>
-
-  - @projects.each do |project|
-    .project
-      a href="#"
-        .project-image
-          .project-image-innner
-            == image_tag(project.image.featured, width: "160")
-        .project-details
-          h1 = project.title
-          = simple_format(project.excerpt)
-          p.entry-meta
-            span.author = project.name
-            span.place = project.location
-        
-        .project-stats
-          .chart-pledged
-            .chart-pledged-inner style="width: #{project.progress}%;" #{project.progress}%
-          .overview
-            ul
-              li.remaining-days <b>#{pluralize(project.days_left, 'dia', 'dias')}</b> #{project.days_left == 1 ? 'restante' : 'restantes'}
-              li.goal <b>#{number_to_currency(project.goal, precision: 0)}</b> objetivo
-              li.pledged <b>#{project.progress}%</b> atingido
-  
+  = render @projects
+    
   
   .projects-actions
-    == link_to("Ver todos os atletas", "/", class: "button")
+    == link_to "Ver todos os atletas", projects_path, class: "button"

@@ -24,6 +24,10 @@ class Project < ActiveRecord::Base
     (expires_at - Date.today).to_i
   end
 
+  def to_param
+    "#{id} #{title}".parameterize
+  end
+
   # TODO: implement
   def progress
     30

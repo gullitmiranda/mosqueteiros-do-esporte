@@ -1,4 +1,6 @@
 Mosqueteiros::Application.routes.draw do
+  resources :projects, only: [:index, :show]
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -8,7 +10,6 @@ Mosqueteiros::Application.routes.draw do
   devise_scope :user do
     get '/users/connect/:network', to: redirect("/users/auth/%{network}"), as: 'user_omniauth_connect'
   end
-
 
   get 'frontend/:template' => 'frontend#show'
 
