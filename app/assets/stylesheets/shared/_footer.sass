@@ -3,8 +3,8 @@
     
   #footer-page-inner
     +margin-leader(2)
-    +padding-leader(1)
-    +padding-trailer(1)
+    +padding-leader(1.5)
+    +padding-trailer(1.5)
     
   .site-links
     +span-columns(10,16)
@@ -13,6 +13,7 @@
     a
       color: #a8a8a8
       text-decoration: none
+      +inline-block
       
       &:hover
         color: $white
@@ -21,11 +22,10 @@
         +effect-click-down
 
     ul
-      +inline-block-list
-      +adjust-leading-to(2)
 
       li
         margin-right: 10px
+        +inline-block
 
         &:after
           content: "/"
@@ -39,32 +39,50 @@
 
   .social-links
     +span-columns(6 omega,16)
-    +pie-clearfix
+    // +pie-clearfix
 
     ul
-      +inline-list
-      +float-right
-      +adjust-font-size-to(32px)
-      +adjust-leading-to(2)
-
+      float: right
+      
       li
-        margin-right: 20px
-        +margin-leader(.2)
         +inline-block
-        +float-left
-
+        margin-right: 20px
 
         &:last-child
           margin-right: 0 !important
 
-    a
-      +text-shadow(0 -1px 0 rgba(#000, .3))
-      color: #c6c7c8
-      +opacity(.8)
-      text-decoration: none
+        &.email
+          a:before
+            @extend .ss-standard
+            content: ss-standard-icon("mail")
+            +inline-block
+            padding-right: 9px
+            margin-top: 2px
 
-      &:hover
-        +opacity(1)
+        &.facebook
+          a:before
+            @extend .ss-social
+            content: ss-social-icon("facebook")
+            +inline-block
+            padding-right: 7px
+            margin-top: 2px
 
-      &:active
-        +effect-click-down
+        a
+          // @extend .normalise-button
+          background-color: #333739
+          +box-shadow(0 0 2px rgba(255,255,255,.2))
+          +border-radius(4px)
+          +adjust-font-size-to(15px)
+          +adjust-leading-to(1)
+          padding-left: 1em
+          padding-right: 1em
+          +padding-trailer(.4)
+          +padding-leader(.4)
+          color: #a8a8a8
+          text-decoration: none
+
+          &:hover
+            color: $white
+
+          &:active
+            +effect-click-down
