@@ -24,7 +24,7 @@ ActiveAdmin.register Project do
         image_tag(project.image.regular, width: 640, height: 430)
       end
       row :video do
-        project.video.html_safe
+        project.video.try(:html_safe)
       end
       row :excerpt
       row :body do
