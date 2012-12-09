@@ -4,6 +4,9 @@ header.page-header.light.bg-white
     h2 Como contrapartida ao seu investimento, você tem disponível os seguintes benefícios:
 
 section.coupons
+  .coupon-actions
+    == link_to "Imprimir Cupons", "#", class: "button", onclick: "window.print(); return false;"
+  
   .coupons-inner
 
     .coupon-row
@@ -31,3 +34,6 @@ section.coupons
             == image_tag("bar-code.png", width: "281")
           .coupon-code
             p #10gdr899fg
+
+  .coupon-actions
+    == link_to "Imprimir Cupons", "#", class: "button", onclick: "window.print(); return false;"
