@@ -108,4 +108,38 @@
       text-decoration: underline
 
   .investor-benefits
-    background-color: #f8f6f3
+    background-color: #efece7
+    +padding-leader(1)
+    +padding-trailer(1)
+
+    h1
+      color: #7e7a77
+      +adjust-font-size-to(15px)
+      +adjust-leading-to(1)
+      font-weight: bold
+      text-transform: uppercase
+      padding-left: 20px
+      padding-right: 20px
+
+    .benefit-row
+      padding-left: 20px
+      padding-right: 20px
+      +padding-leader(1)
+      +padding-trailer(1)
+      +adjust-font-size-to(12px)
+      +adjust-leading-to(.8)
+      border-bottom: 1px solid #e3e0dc
+      color: #7e7a77  
+      
+      &:last-of-type
+        border-bottom: none
+      
+      h2
+        text-transform: uppercase
+        color: $orange
+        font-weight: bold
+        +adjust-font-size-to(14px)
+
+      .sponsor-image
+        img
+          +box-shadow(0 0 1px rgba($black, .2))
