@@ -3,6 +3,7 @@
 #= require facebook_popup
 #= require close_for_facebook_login
 
+#= require bootstrap-tab
 #= require jquery.flexslider
 
 
@@ -20,3 +21,7 @@ $ ->
   $('#js-investir-outro-valor').click (event) ->
     event.preventDefault()
     $('#hidden-form').slideDown()
+
+  $('.js-project-tabs').click (event) ->
+    event.preventDefault()
+    $(this).tab('show')
