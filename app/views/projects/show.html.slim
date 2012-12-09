@@ -4,9 +4,18 @@
 header.page-header
   .page-header-inner
     h1 == @project.title
+    
     p.entry-meta
       span.author == @project.name
       span.place == @project.location
+    
+    .nav-project
+      ul.nav.nav-tabs
+        li.active
+          a href="#" Sobre
+        li
+          a href="#" Investidores
+
 
 
       
