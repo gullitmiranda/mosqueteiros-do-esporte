@@ -8,11 +8,22 @@ header.page-header
       span.author == @project.name
       span.place == @project.location
 
-section.featured-projects
-  
-  - if @project.video.present?
-    == @project.video
-  - else
-    == image_tag(@project.image.regular, width: 640)
+section.project-details
+  .project-details-inner
+    
+    .project-description
+      .share
+        .facebook
+          .fb-like data-href="http://blog.startae.com.br" data-send="true" data-width="580" data-show-faces="true" show-faces="false"
+      
+      - if @project.video.present?
+        == @project.video
+      - else
+        == image_tag(@project.image.regular, width: 640)
 
-  == @project.body
+      h1 Sobre o Projeto
+
+      == @project.body
+
+    .project-sidebar
+      p sidebar

@@ -28,10 +28,11 @@ html.no-js lang="#{{I18n.locale}}"
       == javascript_include_tag 'html5shiv-printshiv'
   
   body class="#{{@page_class}} #{{@item_menu}}"
-    == render 'layouts/browser_warning'
+    == render "layouts/facebook_sdk"
+    / == render "layouts/browser_warning"
 
     section.page
-      == render 'layouts/header'
+      == render "layouts/header"
 
       #content
         / - if notice.present?
@@ -41,9 +42,9 @@ html.no-js lang="#{{I18n.locale}}"
 
         == yield
 
-      == render 'layouts/footer'
+      == render "layouts/footer"
 
-    == javascript_include_tag 'application'
+    == javascript_include_tag "application"
     /[if (gte IE 6)&(lte IE 8)]
       == javascript_include_tag 'http://s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js'
       == javascript_include_tag 'selectivizr'
