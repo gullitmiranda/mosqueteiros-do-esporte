@@ -1,14 +1,33 @@
-header.page-header.light
+header.page-header.light.bg-white
   .page-header-inner
     h1.green Rafael, vamos juntos fazer o esporte acontecer. 
     h2 Como contrapartida ao seu investimento, você tem disponível os seguintes benefícios:
 
 section.coupons
   .coupons-inner
-    h1 Teste
 
     .coupon-row
       .coupon-row-inner
-        h1 asdasda
-        p asdasdasdas
-        p asdasdsada
+
+        .sponsor-image
+          == image_tag("patrocinadores-colorido/netshoes@2x.png", width: "240")
+        .coupon-info
+          h2 10% na compra pelo site
+          p Curabitur blandit tempus porttitor. Doec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. 
+          .coupon-image
+            == image_tag("bar-code.png", width: "281")
+          .coupon-code
+            p #10gdr899fg
+
+    .coupon-row
+      .coupon-row-inner
+        
+        .sponsor-image
+          == image_tag("patrocinadores-colorido/bodytech@2x.png", width: "240")
+        .coupon-info
+          h2 10% na compra pelo site
+          p Curabitur blandit tempus porttitor. Doec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. 
+          .coupon-image
+            == image_tag("bar-code.png", width: "281")
+          .coupon-code
+            p #10gdr899fg
