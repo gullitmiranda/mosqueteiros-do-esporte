@@ -1,0 +1,61 @@
+section.coupons
+  background-color: $white
+
+  .coupons-inner
+    +container
+    +padding-trailer(2)
+
+  .coupon-row
+    border-width: 20px 20px
+    +border-image(url("cupom-border@2x.png") 40 40 40 40 stretch)
+    padding: 10px
+    background-color: #f8f6f3
+    margin-top: -1px
+
+    .coupon-row-inner
+      border: 1px solid #e7e6e3
+      background-color: #f5f4f1
+      padding: 50px
+      +box-shadow(inset 0 0 1px $white)
+      +pie-clearfix
+
+      .sponsor-image
+        +pie-clearfix
+        +float-left
+        width: 40%
+        
+        img
+          +float-left
+          +box-shadow(0 0 1px rgba($black, .2))
+          margin: 0 auto
+
+      .coupon-info
+        +float-left
+        width: 45%
+        color: #7e7a77
+
+        h2
+          +adjust-font-size-to(20px)
+          +adjust-leading-to(1)
+          color: $orange
+          font-weight: bold
+          text-transform: uppercase
+        p
+          +padding-leader(.5)
+          +padding-trailer(.5)
+        
+        .coupon-image
+        .coupon-code
+          color: $black
+          font-weight: bold
+          +adjust-font-size-to(20px)
+          +adjust-leading-to(1)
+          text-align: center
+          width: 281px
+
+.coupon-actions
+  text-align: center
+  +padding-trailer(2)
+  clear: both
+  .button
+    text-transform: uppercase
