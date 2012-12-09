@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.active.find(params[:id])
+    session[:return_to] = project_path(@project) unless current_user.present?
     @payment = Payment.new(project: @project, amount: 60)
   end
 end

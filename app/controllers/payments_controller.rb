@@ -13,7 +13,6 @@ class PaymentsController < ApplicationController
     if params[:payment][:amount].to_i >= 60 and @payment.project.active?
       @payment.user = current_user
       @payment.save!
-      # TODO: redirect user after login
       redirect_to review_payment_path(@payment)
     else
       redirect_to root_url, notice: 'Error: Invalid amount or innactive project'
