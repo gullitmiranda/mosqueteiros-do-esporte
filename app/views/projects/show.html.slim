@@ -9,11 +9,36 @@ header.page-header
       span.place == @project.location
 
 section.featured-projects
-  = render 'payments/form'
-  
-  - if @project.video.present?
-    == @project.video
-  - else
-    == image_tag(@project.image.regular, width: 640)
+  #investidores
+    h1 Investidores
 
-  == @project.body
+    - @project.payments.completed.collect(&:user).uniq(&:id).each do |user|
+      p == image_tag(user.avatar.regular, width: 32, height: 32)
+      p = user.name
+      
+    hr 
+  #sidebar
+    p <b>#{@project.payments.size}</b> investidores
+    p <b>#{number_to_currency(@project.pledged, precision: 0)}</b> atingidos de #{number_to_currency(@project.goal, precision: 0)}
+    p <b>#{pluralize(@project.days_left, 'dia', 'dias')}</b> #{{@project.days_left == 1 ? 'restante' : 'restantes'}}
+
+    = form_for @payment do |f|
+      = f.hidden_field :project_id
+      = f.hidden_field :amount
+      = f.submit 'Investir (R$60)'
+
+    p#js-investir-outro-valor Quero investir outro valor
+    = form_for @payment, html: {id: 'hidden-form', style: 'display: none'} do |f|
+      = f.hidden_field :project_id
+      = f.text_field :amount
+      = f.submit 'Investir'
+
+
+
+  #projeto
+    - if @project.video.present?
+      == @project.video
+    - else
+      == image_tag(@project.image.regular, width: 640)
+
+    == @project.body

@@ -3,7 +3,8 @@ class PaymentsController < ApplicationController
   before_filter :authenticate_user!
 
   def show
-    @payment = Payment.find_by_identifier!(params[:id])
+    @payment = Payment.find_by_identifier(params[:id])
+    redirect_to root_url unless @payment.present? or current_user.payments.any?
   end
 
   def create

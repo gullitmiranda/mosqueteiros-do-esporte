@@ -16,3 +16,6 @@ $ ->
     pauseOnHover: false
     slideshowSpeed: 7000
     animationDuration: 600
+
+  $('#js-investir-outro-valor').click ->
+    $('#hidden-form').slideDown()

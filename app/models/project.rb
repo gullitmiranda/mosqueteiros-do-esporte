@@ -5,6 +5,7 @@ class Project < ActiveRecord::Base
                   :remote_image_url
 
   validates :title, :image, presence: true
+  has_many :payments, dependent: :destroy
 
   mount_uploader :image, ProjectImageUploader
 
@@ -30,6 +31,10 @@ class Project < ActiveRecord::Base
 
   # TODO: implement
   def progress
-    30
+    ((pledged / goal * 100).abs).round.to_i
+  end
+
+  def pledged
+    payments.completed.pluck(:amount).sum
   end
 end

@@ -12,7 +12,7 @@
     
     .project-stats
       .chart-pledged
-        .chart-pledged-inner style="width: #{{project.progress}}%;" #{{project.progress}}%
+        .chart-pledged-inner style="width: #{{project.progress > 100 ? 100 : project.progress}}%;" #{{project.progress}}%
       .overview
         ul
           li.remaining-days <b>#{{pluralize(project.days_left, 'dia', 'dias')}}</b> #{{project.days_left == 1 ? 'restante' : 'restantes'}}

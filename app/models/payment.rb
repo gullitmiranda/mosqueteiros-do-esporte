@@ -14,6 +14,10 @@ class Payment < ActiveRecord::Base
 
   validates :token, :identifier, uniqueness: true, allow_blank: true
 
+  def self.completed
+    where(completed: true)
+  end
+
   attr_reader :redirect_uri
   def setup!(return_url, cancel_url)
     response = client.setup(

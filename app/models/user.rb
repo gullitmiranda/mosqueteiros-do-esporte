@@ -20,6 +20,8 @@ class User < ActiveRecord::Base
   validates :name, presence: true
   
   mount_uploader :avatar, UserAvatarUploader
+
+  has_many :payments, dependent: :destroy
   
   def self.find_for_facebook_oauth(access_token, signed_in_resource = nil)
     data = access_token.info
