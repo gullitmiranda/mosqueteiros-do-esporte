@@ -1,8 +1,6 @@
 header
   &.page-header
     background: #313639 image-url("page-header-bg.jpg") 0 0 repeat
-    +padding-leader(1.5)
-    +padding-trailer(1.5)
     +box-shadow(inset 0 0 1.5em $black)
     
     +respond-to(retina)
@@ -37,6 +35,45 @@ header
 
     .page-header-inner
       +container
+      +padding-leader(1.5)
+      +padding-trailer(1.5)
+      position: relative
+      
+      .nav-project
+        position: absolute
+        bottom: 0
+        left: 0
+        
+        .nav-tabs
+          margin-bottom: 0
+          border-bottom: none
+          font-weight: bold
+          margin-left: 15px
+          +adjust-font-size-to(17)
+          +adjust-leading-to(1)
+          text-transform: uppercase
+
+          li
+            margin-right: 10px
+        
+        .nav-tabs > li > a
+          border: none
+          background-color: $orange
+          color: $white
+          border-bottom: 1px solid $white
+          +box-shadow(inset 0 -2px 2px rgba($black, .1))
+
+          &:hover
+            background-color: darken($orange, 5%)
+            
+        
+        .nav-tabs > .active > a,
+        .nav-tabs > .active > a:hover
+          border: none
+          color: #7e7a77
+          background-color: $white
+          +box-shadow(none)
+
 
 .pagination
   @extend .pagination-large
