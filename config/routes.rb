@@ -1,4 +1,6 @@
 Mosqueteiros::Application.routes.draw do
+  get "payments/create"
+
   resources :projects, only: [:index, :show]
 
   ActiveAdmin.routes(self)
@@ -20,6 +22,15 @@ Mosqueteiros::Application.routes.draw do
   root to: 'home#index'
 
   get "home/index"
+
+  resources :payments, only: [:show, :create] do
+    collection do
+      get :success
+      get :cancel
+      post :notify
+    end
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

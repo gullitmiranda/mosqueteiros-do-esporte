@@ -18,6 +18,7 @@ gem "rufus-scheduler"
 gem "meta_search"
 gem "kaminari"
 gem "newrelic_rpm"
+gem 'paypal-express'
 
 group :assets do
   gem "compass", "~> 0.12.2"
