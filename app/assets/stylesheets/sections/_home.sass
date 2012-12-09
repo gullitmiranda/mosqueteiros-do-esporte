@@ -2,7 +2,7 @@ img
   max-width: 100%
 
 #slider-home
-  background-color: #eee
+  background-color: $black
   position: relative
   width: 100%
   +min-height(386px)
@@ -64,6 +64,7 @@ img
           width: 100%
           top: 100px
           left: 10%
+          +hide-text
 
           +respond-to(smartphones)
             top: 40px
@@ -118,7 +119,7 @@ header.section-header
     font-weight: bold
     text-align: center
     text-transform: uppercase
-    +box-shadow(0 1px 0 $gray-lighter)
+    +box-shadow(0 1px 0 rgba($gray-light, .2))
     +margin-leader(0)
     +margin-trailer(2)
 
@@ -155,7 +156,6 @@ section.featured-projects
   
   .project-details
     +span-columns(5 omega, 8)
-
     +padding-leader(1)
     position: relative
 
@@ -238,3 +238,23 @@ section.featured-projects
   text-align: center
   +padding-leader(1)
   +padding-trailer(1)
+
+section.sponsors
+  background-color: #efece7
+  +padding-trailer(2)
+  +margin-leader(1)
+
+  .sponsors-inner
+    +container
+
+    h1
+      span
+        background-color: #efece7
+
+    ul
+      li
+        +span-columns(4,16)
+        +nth-omega(4n, of-type)
+        
+        img
+          margin: 0 auto

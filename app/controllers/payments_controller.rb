@@ -1,6 +1,6 @@
 class PaymentsController < ApplicationController
   rescue_from Paypal::Exception::APIError, with: :paypal_api_error
-  before_filter :authenticate_user!, only: :create
+  before_filter :authenticate_user!
 
   def show
     @payment = Payment.find_by_identifier!(params[:id])
@@ -9,8 +9,9 @@ class PaymentsController < ApplicationController
   def create
     payment = Payment.create!(params[:payment])
     payment.user = current_user
+    # TODO: redirect user after login
     # TODO: verify if project is active
-    payment.project = Project.find(params[:project_id])
+    # payment.project = Project.find(params[:project_id])
     payment.setup!(
       success_payments_url,
       cancel_payments_url
@@ -30,10 +31,6 @@ class PaymentsController < ApplicationController
     payment = Payment.find_by_token!(params[:token])
     payment.cancel!
     redirect_to root_url
-  end
-
-  def notify
-    Paypal::IPN.verify!(request.raw_post)
   end
 
   private

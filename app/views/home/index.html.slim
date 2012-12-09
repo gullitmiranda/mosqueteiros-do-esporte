@@ -25,7 +25,22 @@ section.featured-projects
   header.section-header
     h1 <span>Atletas em Destaque</span>
   = render @projects
-    
   
   .projects-actions
     == link_to "Ver todos os atletas", projects_path, class: "button"
+
+section.sponsors
+  .sponsors-inner
+    
+    header.section-header
+      h1 <span>invista e ganhe benefícios dos nossos patrocinadores</span>
+    
+    ul
+      li
+        == image_tag("netshoes@2x.png", width: "222", alt: "")
+      li
+        == image_tag("bodytech@2x.png", width: "240", alt: "")
+      li
+        == image_tag("fastshop@2x.png", width: "180", alt: "")
+      li
+        == image_tag("livrariacultura@2x.png", width: "238", alt: "")

@@ -1,6 +1,10 @@
-section.featured-projects
-  header.section-header
-    h1 <span>Todos Atletas</span>
-  = render @projects
+- @title= "Conheça os atletas e seus desafios esportivos"
+- @item_menu = "conheca"
 
+header.page-header
+  .page-header-inner
+    h1 Conheça os atletas e seus desafios esportivos
+
+section.featured-projects
+  = render @projects
   = paginate @projects

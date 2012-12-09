@@ -6,7 +6,8 @@ class Payment < ActiveRecord::Base
                   :completed,
                   :canceled,
                   :user,
-                  :project
+                  :project,
+                  :project_id
 
   belongs_to :user
   belongs_to :project
@@ -63,7 +64,7 @@ class Payment < ActiveRecord::Base
       amount: amount,
       currency_code: :BRL,
       items: [{
-        name: product.title,
+        name: project.title,
         amount: amount
       }]
     })

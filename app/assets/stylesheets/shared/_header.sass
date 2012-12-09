@@ -6,7 +6,8 @@
   position: relative
   
 #header-page-inner
-  
+  +container
+
   .logo-page
     width: 208px
     height: 34px
@@ -31,6 +32,7 @@
     font-weight: 700
     +adjust-font-size-to(17px)
     +adjust-leading-to(1)
+    text-transform: uppercase
 
     a
       color: #888481
@@ -43,6 +45,7 @@
         +adjust-font-size-to(14px)
         +adjust-leading-to(.8)
         color: #b5b2af
+        text-transform: lowercase
 
       &:hover
         color: darken(#888481, 20%)
@@ -66,8 +69,8 @@
 
 
   nav.nav-user
-    +padding-leader(1.5)
-    +padding-trailer(.5)
+    +padding-leader(1)
+    +padding-trailer(1)
     +span-columns(4 omega, 16)
     
     .info
@@ -83,6 +86,7 @@
         float: left
         display: inline
         margin-left: 5px
+        
         &.item-avatar
           vertical-align: middle
           padding-right: 5px
@@ -91,8 +95,8 @@
             +inline-block
             +pie-clearfix
             img
-              width: 24px
-              height: 24px
+              width: 32px
+              height: 32px
               float: left
               text-align: center
 
@@ -154,8 +158,16 @@
             +padding-leader(.2)
             +padding-trailer(.2)
             text-decoration: none
+            
             &:active
               +effect-click-down
+            
             &:hover
               background-color: $link-color
               color: #333
+
+body.o_que .nav-page li.o_que, body.conheca .nav-page li.conheca, body.seja_um .nav-page li.seja_um
+  a
+    color: darken(#888481, 30%) !important
+    span
+      color: darken(#888481, 30%) !important

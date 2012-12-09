@@ -186,26 +186,37 @@ $button-box-shadow-retina-active:     0 0 2px rgba(0,0,0,.6) !default
   &.facebook-connect
     background: #587cad
     +text-shadow(rgba($black, .4) 0 1px 0)
-    padding: 0 15px
-    // line-height: 35px
-    // height: 35px
-    line-height: auto
-    height: auto
-    color: $white
-    font-weight: bold
-    position: relative
-    +adjust-font-size-to(14px)
+    +box-shadow(0 0 2px rgba(255,255,255,.2))
+    +border-radius(4px)
+    +adjust-font-size-to(15px)
     +adjust-leading-to(1)
-    +min-height(0)
+    padding-left: .6em
+    padding-right: 1em
+    +padding-trailer(.3)
+    +padding-leader(.3)
+    color: $white
+    text-decoration: none
+    position: relative
+    overflow: hidden
+
+    &:after
+      content: ""
+      position: absolute
+      top: 0
+      left: 33px
+      height: 40px
+      width: 1px
+      border-right: 1px solid rgba($white, .1)
+      display: block
 
     &:before
-      content: ""
+      @extend .ss-social
+      content: ss-social-icon("facebook")
+      +inline-block
+      padding-right: 20px
       position: relative
-      top: 6px
-      float: left
-      width: 28px
-      height: 28px
-      margin: 0
+      top: 2px
+      font-size: 18px
         
     &:hover
       background: darken(#587cad, 5%)

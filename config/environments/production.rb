@@ -1,5 +1,6 @@
 Mosqueteiros::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
+  Slim::Engine.set_default_options :format => :html5
 
   # Code is not reloaded between requests
   config.cache_classes = true
