@@ -19,6 +19,7 @@ gem "meta_search"
 gem "kaminari"
 gem "newrelic_rpm"
 gem 'paypal-express'
+gem "binding_of_caller"
 
 group :assets do
   gem "compass", "~> 0.12.2"
@@ -41,6 +42,7 @@ end
 group :development do
   gem "foreman"
   gem "rspec-rails"
+  gem "better_errors"
 end
 
 gem 'activeadmin', git: 'https://github.com/startae/activepress.git', branch: '022d02c8f168eecbe6872e3d1782dd4709ebe47c'

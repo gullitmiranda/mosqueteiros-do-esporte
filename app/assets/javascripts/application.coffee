@@ -17,5 +17,6 @@ $ ->
     slideshowSpeed: 7000
     animationDuration: 600
 
-  $('#js-investir-outro-valor').click ->
+  $('#js-investir-outro-valor').click (event) ->
+    event.preventDefault()
     $('#hidden-form').slideDown()

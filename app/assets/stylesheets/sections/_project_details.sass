@@ -1,0 +1,145 @@
+.share
+  +padding-leader(.5)
+  +padding-trailer(.5)
+
+.project-details
+  background-color: $white
+
+.project-details-inner
+  +container
+
+.project-description
+  +span-columns(11, 16)
+  +adjust-font-size-to(16px)
+  +adjust-leading-to(1)
+  color: #7e7a77
+  +padding-trailer(1)
+
+  p
+    +padding-trailer(1)
+
+  h1
+    color: $orange
+    font-weight: bold
+    +adjust-font-size-to(26px)
+    +adjust-leading-to(1)
+    text-transform: uppercase
+    +padding-leader(1)
+
+  h2
+    font-weight: bold
+    text-transform: uppercase
+    color: #666
+    +adjust-font-size-to(18px)
+    +adjust-leading-to(1)
+    +padding-trailer(1)
+  
+  iframe
+    width: 100%
+
+
+.project-sidebar
+  +span-columns(5 omega, 16)
+  background-color: #f8f6f3
+  +pie-clearfix
+
+  .project-stats
+    .overview
+      ul
+        li
+          position: relative
+          +padding-leader(.5)
+          +padding-trailer(.5)
+          border-bottom: 1px solid #ece9e6
+          padding-left: 65px
+
+          &:before
+            @extend .ss-standard
+            position: absolute
+            top: 20px
+            left: 20px
+            color: $green
+            font-size: 32px
+            line-height: 32px
+            +text-shadow(0 -1px 0 darken($green, 5%))
+            
+          b
+            +adjust-font-size-to(42px)
+            +adjust-leading-to(2)
+            display: block
+          &.investors
+            &:before
+              content: ss-standard-icon("users")
+          &.pledged
+            &:before
+              content: ss-standard-icon("check")
+          &.remaining-days
+            &:before
+              content: ss-standard-icon("clock")
+  
+  .project-actions
+    text-align: center
+    +padding-leader(1)
+    +padding-trailer(1)
+    
+    .button
+      &.invest
+        color: $white
+        background-color: #87c341
+        +box-shadow(inset 0 -1px 0 rgba(0,0,0,.2))
+        +background-image(linear-gradient(bottom, rgba(0,0,0,.1) 0%, rgba(255,255,255,.1) 100%))
+        +text-shadow(0 1px 0 rgba($black, .2))
+        +adjust-font-size-to(25px)
+        +adjust-leading-to(1)
+        text-transform: uppercase
+        padding: .8em
+        
+        span
+          font-weight: normal
+
+        &:hover
+          background-color: darken(#87c341, 8%)
+    
+    .link
+      display: block
+      +margin-leader(.5)
+      +margin-trailer(.5)
+      color: #555
+      text-decoration: underline
+
+  .investor-benefits
+    background-color: #efece7
+    +padding-leader(1)
+    +padding-trailer(1)
+
+    h1
+      color: #7e7a77
+      +adjust-font-size-to(15px)
+      +adjust-leading-to(1)
+      font-weight: bold
+      text-transform: uppercase
+      padding-left: 20px
+      padding-right: 20px
+
+    .benefit-row
+      padding-left: 20px
+      padding-right: 20px
+      +padding-leader(1)
+      +padding-trailer(1)
+      +adjust-font-size-to(12px)
+      +adjust-leading-to(.8)
+      border-bottom: 1px solid #e3e0dc
+      color: #7e7a77  
+      
+      &:last-of-type
+        border-bottom: none
+      
+      h2
+        text-transform: uppercase
+        color: $orange
+        font-weight: bold
+        +adjust-font-size-to(14px)
+
+      .sponsor-image
+        img
+          +box-shadow(0 0 1px rgba($black, .2))

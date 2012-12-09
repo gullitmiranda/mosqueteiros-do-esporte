@@ -21,6 +21,10 @@ class Project < ActiveRecord::Base
     order('updated_at DESC')
   end
 
+  def backers
+    payments.completed.collect(&:user).uniq(&:id)
+  end
+
   def days_left
     (expires_at - Date.today).to_i
   end
