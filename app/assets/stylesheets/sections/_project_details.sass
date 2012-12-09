@@ -1,3 +1,10 @@
+.share
+  +padding-leader(.5)
+  +padding-trailer(.5)
+
+.project-details
+  background-color: $white
+
 .project-details-inner
   +container
 
@@ -29,11 +36,12 @@
   
   iframe
     width: 100%
-  
-  .share
-    +padding-leader(.5)
-    +padding-trailer(.5)
 
 
 .project-sidebar
   +span-columns(5 omega, 16)
+  background-color: #f8f6f3
+  +pie-clearfix
+
+  .investor-benefits
+    background-color: #f8f6f3

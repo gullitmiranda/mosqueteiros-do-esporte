@@ -10,11 +10,12 @@ header.page-header
 
 section.project-details
   .project-details-inner
-    
+
+    .share
+      .facebook
+        .fb-like data-href="http://blog.startae.com.br" data-send="true" data-width="580" data-show-faces="true" show-faces="false"
+
     .project-description
-      .share
-        .facebook
-          .fb-like data-href="http://blog.startae.com.br" data-send="true" data-width="580" data-show-faces="true" show-faces="false"
       
       - if @project.video.present?
         == @project.video
@@ -22,8 +23,27 @@ section.project-details
         == image_tag(@project.image.regular, width: 640)
 
       h1 Sobre o Projeto
-
       == @project.body
 
     .project-sidebar
-      p sidebar
+      .project-stats
+        .overview
+          ul
+            li.investors <b>10</b> apoiadores
+            li.pledged <b>R$ 620</b> atingidos de R$ 5.800
+            li.remaining-days <b>38</b> dias restantes
+
+      .project-actions
+        == link_to("Investir (R$60)", "/", class: "button invest")
+        == link_to("Quero investir outro valor", "/", class: "")
+
+      .investor-benefits
+        h1 Benefícios para investidores
+
+        .benefit-row
+          h2 10% na compra pelo site
+          p Curabitur blandit tempus porttitor. Doec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. 
+        
+        .benefit-row
+          h2 10% na compra pelo site
+          p Curabitur blandit tempus porttitor. Doec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. 
