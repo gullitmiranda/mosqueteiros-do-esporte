@@ -29,6 +29,10 @@ Mosqueteiros::Application.routes.draw do
       get :cancel
       post :notify
     end
+    member do
+      get :review
+      post :checkout
+    end
   end
 
 

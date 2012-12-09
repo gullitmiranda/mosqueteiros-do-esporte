@@ -33,12 +33,6 @@ class Payment < ActiveRecord::Base
     self
   end
 
-  def cancel!
-    self.canceled = true
-    self.save!
-    self
-  end
-
   def complete!(payer_id = nil)
     response = client.checkout!(self.token, payer_id, payment_request)
     self.payer_id = payer_id

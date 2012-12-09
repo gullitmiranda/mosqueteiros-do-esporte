@@ -21,8 +21,16 @@ class Project < ActiveRecord::Base
     order('updated_at DESC')
   end
 
+  def self.active
+    published.where('expires_at >= ?', Date.today)
+  end
+
   def backers
     payments.completed.collect(&:user).uniq(&:id)
+  end
+
+  def active?
+    published? and days_left > 0
   end
 
   def days_left
@@ -33,7 +41,6 @@ class Project < ActiveRecord::Base
     "#{id} #{title}".parameterize
   end
 
-  # TODO: implement
   def progress
     ((pledged / goal * 100).abs).round.to_i
   end
