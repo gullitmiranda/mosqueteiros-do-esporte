@@ -76,5 +76,36 @@
           &.remaining-days
             &:before
               content: ss-standard-icon("clock")
+  
+  .project-actions
+    text-align: center
+    +padding-leader(1)
+    +padding-trailer(1)
+    
+    .button
+      &.invest
+        color: $white
+        background-color: #87c341
+        +box-shadow(inset 0 -1px 0 rgba(0,0,0,.2))
+        +background-image(linear-gradient(bottom, rgba(0,0,0,.1) 0%, rgba(255,255,255,.1) 100%))
+        +text-shadow(0 1px 0 rgba($black, .2))
+        +adjust-font-size-to(25px)
+        +adjust-leading-to(1)
+        text-transform: uppercase
+        padding: .8em
+        
+        span
+          font-weight: normal
+
+        &:hover
+          background-color: darken(#87c341, 8%)
+    
+    .link
+      display: block
+      +margin-leader(.5)
+      +margin-trailer(.5)
+      color: #555
+      text-decoration: underline
+
   .investor-benefits
     background-color: #f8f6f3

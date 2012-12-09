@@ -34,8 +34,9 @@ section.project-details
             li.remaining-days <b>38</b> dias restantes
 
       .project-actions
-        == link_to("Investir (R$60)", "/", class: "button invest")
-        == link_to("Quero investir outro valor", "/", class: "")
+        == link_to("/", class: "button invest") do
+          | Investir <span>(R$60)</span>
+        == link_to("Quero investir outro valor", "/", class: "link")
 
       .investor-benefits
         h1 Benefícios para investidores
