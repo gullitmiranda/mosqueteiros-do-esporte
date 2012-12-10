@@ -53,9 +53,7 @@ class Project < ActiveRecord::Base
     payments.completed.pluck(:amount).sum
   end
 
-  def update_status!
-    if days_left > 0
-      self.success = pledged == goal
-    end
+  def update_status
+    self.success = pledged == goal
   end
 end
