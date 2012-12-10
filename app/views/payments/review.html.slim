@@ -1,23 +1,39 @@
-- @title= 'Confirmar pagamento'
+- @title= 'Confirme seu investimento'
 - @page_class= 'page-payment'
 
 header.page-header.light
   .page-header-inner
-    h1 Revise seu investimento
+    h1 Confirme seu investimento
     h2.green Ninguém cruza a linha de chegada sozinho. Muita gente faz parte desse processo e queremos demais que você também se sinta parte dessa realização.
 
 section.payment
   .payment-inner
     
     #payment-main
-      h3 Muito obrigado! Você está a um passo de fazer parte da vitória deste atleta.
-      p Valor a ser pago #{number_to_currency(@payment.amount, precision: 0)}
-      = link_to 'Pagar com paypal', checkout_payment_path(@payment), class: 'button invest', method: :post
-
-      == image_tag("paypal-protecao.png", width: "100")
+      .box-review-info
+        h3 Muito obrigado! Você está a um passo de fazer parte da vitória deste atleta.
+        p Valor a ser pago <b>#{number_to_currency(@payment.amount, precision: 0)}</b>
+      
+      .payment-action
+        = link_to 'Pagar com paypal', checkout_payment_path(@payment), class: 'button invest', method: :post
+        == image_tag("paypal-protecao.png", width: "100")
 
     #payment-sidebar
+      
+      .project-sidebar
+        .project-sidebar-image
+          .project-sidebar-image-innner
+            == image_tag(@payment.project.image.featured, width: "160")
+            .project-sidebar-category == @payment.project.category
+        .project-sidebar-info
+          h1 == @payment.project.title
+          == simple_format(@payment.project.excerpt)
+          p.entry-meta
+            span.author == @payment.project.name
+            span.place == @payment.project.location
+
       .faq
+        h1 Perguntas frequentes
         .row
           .q 1. Existe devolução do dinheiro?
           .a Curabitur blandit tempus porttitor. Doec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. 

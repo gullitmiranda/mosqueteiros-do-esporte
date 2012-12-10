@@ -10,9 +10,127 @@ section.payment
 
     #payment-main
       +span-columns(11,16)
+      
+      .box-review-info
+        background-color: #f8f6f3
+        border: 1px solid #e7e6e3
+        padding: 20px
+        color: #555
+        text-align: center
+        h3
+          font-weight: bold
+          +adjust-font-size-to(18px)
+          +adjust-leading-to(1)
+        p
+          +adjust-font-size-to(19px)
+          +adjust-leading-to(1)
+          +padding-leader(1)
+          b
+            font-weight: bold
+            color: $white
+            background-color: $green
+            +inline-block
+            +border-radius(3px)
+            padding: 5px 8px
+            +text-shadow(0 1px 0 rgba($black, .4))
+      .payment-action
+        +margin-leader(2)
+        text-align: center
+        img
+          margin-left: 15px
+
+
     #payment-sidebar
       +span-columns(5 omega,16)
       background-color: #f8f6f3
+      +margin-trailer(2)
+      
+      .project-sidebar
+        border-bottom: 1px solid #ece9e6
+        +pie-clearfix
+        width: 100%
+        float: none
+        margin-bottom: 0
+
+        .project-sidebar-image
+          width: 160px
+          margin: 0 auto
+          position: relative
+
+          img
+            vertical-align: top
+        
+          .project-sidebar-category
+            position: absolute
+            bottom: 0
+            left: 0
+            width: 100%
+            background-color: rgba($orange, .8)
+            color: $white
+            +text-shadow(0 1px 0 rgba($black, .4))
+            +adjust-leading-to(.9)
+            +adjust-font-size-to(16px)
+            font-weight: bold
+            text-align: center
+            padding: 10px
+            text-transform: uppercase
+        
+        .project-sidebar-info
+          +padding-leader(1)
+          +padding-trailer(1)
+          padding-left: 20px
+          padding-right: 20px
+          h1
+            +adjust-font-size-to(21px)
+            +adjust-leading-to(1)
+            color: $orange
+            font-weight: bold
+
+        .entry-meta
+          text-transform: uppercase
+          padding: 0
+          +adjust-font-size-to(12px)
+          +adjust-leading-to(1)
+          +padding-trailer(.5)
+          +padding-leader(.5)
+          .author
+            font-weight: bold
+          
+          .place
+            &:before
+              content: ", "
+      
+      .faq
+        +padding-leader(1)
+        +padding-trailer(1)
+        +pie-clearfix
+    
+        h1
+          color: #7e7a77
+          +adjust-font-size-to(15px)
+          +adjust-leading-to(1)
+          font-weight: bold
+          text-transform: uppercase
+          padding-left: 20px
+          padding-right: 20px
+
+        .row
+          padding-left: 20px
+          padding-right: 20px
+          +padding-leader(.5)
+          +padding-trailer(.5)
+          +adjust-font-size-to(12px)
+          +adjust-leading-to(.8)
+          color: #7e7a77  
+          &:last-of-type
+            border-bottom: none
+          .q
+            text-transform: uppercase
+            font-weight: bold
+            +adjust-font-size-to(13px)
+            +adjust-leading-to(.8)
+
+
 
 .button
   &.invest
