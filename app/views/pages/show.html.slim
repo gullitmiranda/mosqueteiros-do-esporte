@@ -1,2 +1,10 @@
-h1 = @page.title
-= simple_format(@page.body)
+- @title = @page.title
+- @page_class= "section-page-content type-internal"
+
+header.page-header.dark
+  .page-header-inner
+    h1 = @page.title
+
+section.content
+  .content-inner
+    = simple_format(@page.body)
