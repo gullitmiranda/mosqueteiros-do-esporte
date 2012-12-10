@@ -1,5 +1,10 @@
-section.featured-projects
-  nav.nav-user role="navigation"
-    ul
-      li.item-login
-        a href="#{{user_omniauth_connect_path(:facebook)}}" title="Entrar com o Facebook" class="popup button facebook-connect" data-width="600" data-height="400" Entrar com Facebook
+header.page-header.light
+  .page-header-inner
+    h1 Login
+    h2 Por favor faça login para continuar
+
+section.session
+  .session-inner
+    .box-login
+      a href="#{{user_omniauth_connect_path(:facebook)}}" title="Entrar com o Facebook" class="popup button facebook-connect" data-width="600" data-height="400" Entrar com Facebook
+      p.note Não se preocupe, não iremos postar nada sem sua permissão.

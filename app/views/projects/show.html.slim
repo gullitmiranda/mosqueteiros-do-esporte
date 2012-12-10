@@ -62,11 +62,12 @@ section.project-details
           = f.hidden_field :amount
           button.button.invest type="submit" Investir <span>(R$60)</span>
 
-        == link_to "Quero investir outro valor", @project, class: "link", id: 'js-investir-outro-valor'
-        = form_for @payment, html: {id: 'hidden-form', style: 'display: none'} do |f|
-          = f.hidden_field :project_id
-          = f.text_field :amount
-          = f.submit 'Investir', class: 'button invest'
+        .outro-valor
+          == link_to "Quero investir outro valor", @project, class: "link", id: 'js-investir-outro-valor'
+          = form_for @payment, html: {id: 'hidden-form', style: 'display: none'} do |f|
+            = f.hidden_field :project_id
+            = f.text_field :amount
+            = f.submit 'Investir', class: 'button invest small'
 
       .investor-benefits
         h1 Benefícios para investidores

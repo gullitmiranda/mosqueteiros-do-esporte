@@ -1,17 +1,21 @@
 header.page-header.light.bg-white
   .page-header-inner
-    h1.green #{current_user.first_name}, vamos juntos fazer o esporte acontecer. 
-    h2 Como contrapartida ao seu investimento, você tem disponível os seguintes benefícios:
+    h1 Minha conta
+    h2 Veja todos os projetos que você investiu e seus cupons
 
-    - if @payments.any?
+- if @payments.any?
+  .section-investments
+    .investments-inner
+      header.section-header
+        h1 <span style="background-color: #fff;">Meus investimentos</span>
+      
       h2 Alguns dos projetos que você apoiou não chegaram ao objetivo.      
-      p Você tem <b>#{number_to_currency(current_user.credit, precision: 0)}</b> em créditos para reinvestir em outros projetos
+      p Você tem <b class="valor">#{number_to_currency(current_user.credit, precision: 0)}</b> em créditos para reinvestir em outros projetos.
 
 section.coupons
-  .coupon-actions
-    == link_to "Imprimir Cupons", "#", class: "button", onclick: "window.print(); return false;"
-  
   .coupons-inner
+    header.section-header
+      h1 <span style="background-color: #fff;">Meus cupons</span>
 
     .coupon-row
       .coupon-row-inner
@@ -38,6 +42,3 @@ section.coupons
             == image_tag("bar-code.png", width: "281")
           .coupon-code
             p #10gdr899fg
-
-  .coupon-actions
-    == link_to "Imprimir Cupons", "#", class: "button", onclick: "window.print(); return false;"
