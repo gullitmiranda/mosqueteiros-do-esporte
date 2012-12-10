@@ -3,6 +3,10 @@ header.page-header.light.bg-white
     h1.green #{current_user.first_name}, vamos juntos fazer o esporte acontecer. 
     h2 Como contrapartida ao seu investimento, você tem disponível os seguintes benefícios:
 
+    - if @payments.any?
+      h2 Alguns dos projetos que você apoiou não chegaram ao objetivo.      
+      p Você tem <b>#{number_to_currency(current_user.credit, precision: 0)}</b> em créditos para reinvestir em outros projetos
+
 section.coupons
   .coupon-actions
     == link_to "Imprimir Cupons", "#", class: "button", onclick: "window.print(); return false;"

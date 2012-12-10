@@ -79,3 +79,8 @@
 #   end
 # end
 
+Project.all.each do |project|
+  project.update_attributes(title: project.title[0..59], excerpt: project.excerpt[0..134], success: false)
+end
+
+Project.find(5).update_attributes(expires_at: Date.yesterday)

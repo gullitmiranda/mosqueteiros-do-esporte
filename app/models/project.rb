@@ -2,9 +2,11 @@ class Project < ActiveRecord::Base
   attr_accessible :title, :image, :body, :name, 
                   :location, :video, :excerpt, :goal, 
                   :expires_at, :published, :featured,
-                  :remote_image_url
+                  :remote_image_url, :success
 
-  validates :title, :image, presence: true
+  validates :title, :image, :excerpt, presence: true
+  validates :title, length: { maximum: 60 }
+  validates :excerpt, length: { maximum: 135 }
   has_many :payments, dependent: :destroy
 
   mount_uploader :image, ProjectImageUploader

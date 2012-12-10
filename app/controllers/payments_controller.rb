@@ -35,6 +35,10 @@ class PaymentsController < ApplicationController
     redirect_to payment_url(payment.identifier)
   end
 
+  def credits
+    @payments = current_user.payments_from_failed_projects
+  end
+
   private
 
   def paypal_api_error(e)
