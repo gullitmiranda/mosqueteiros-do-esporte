@@ -13,6 +13,7 @@ ActiveAdmin.register Project do
   index do
     column :id
     column :title
+    column :category
     column :published, sortable: :published do |project|
       (project.published? ? '<span class="label success">Sim</span>' : '<span class="label">Não</span>').html_safe
     end

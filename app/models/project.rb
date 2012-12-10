@@ -11,6 +11,8 @@ class Project < ActiveRecord::Base
 
   mount_uploader :image, ProjectImageUploader
 
+  before_save :update_status
+
   def self.published
     where(published: true)
   end
@@ -49,5 +51,11 @@ class Project < ActiveRecord::Base
 
   def pledged
     payments.completed.pluck(:amount).sum
+  end
+
+  def update_status!
+    if days_left > 0
+      self.success = pledged == goal
+    end
   end
 end
