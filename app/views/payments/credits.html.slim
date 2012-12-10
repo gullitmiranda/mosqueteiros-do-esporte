@@ -12,33 +12,33 @@ header.page-header.light.bg-white
       h2 Alguns dos projetos que você apoiou não chegaram ao objetivo.      
       p Você tem <b class="valor">#{number_to_currency(current_user.credit, precision: 0)}</b> em créditos para reinvestir em outros projetos.
 
-section.coupons
-  .coupons-inner
-    header.section-header
-      h1 <span style="background-color: #fff;">Meus cupons</span>
+  section.coupons
+    .coupons-inner
+      header.section-header
+        h1 <span style="background-color: #fff;">Meus cupons</span>
 
-    .coupon-row
-      .coupon-row-inner
+      .coupon-row
+        .coupon-row-inner
 
-        .sponsor-image
-          == image_tag("patrocinadores-colorido/netshoes@2x.png", width: "240")
-        .coupon-info
-          h2 10% na compra pelo site
-          p Curabitur blandit tempus porttitor. Doec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. 
-          .coupon-image
-            == image_tag("bar-code.png", width: "281")
-          .coupon-code
-            p #10gdr899fg
+          .sponsor-image
+            == image_tag("patrocinadores-colorido/netshoes@2x.png", width: "240")
+          .coupon-info
+            h2 10% na compra pelo site
+            p Curabitur blandit tempus porttitor. Doec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. 
+            .coupon-image
+              == image_tag("bar-code.png", width: "281")
+            .coupon-code
+              p #10gdr899fg
 
-    .coupon-row
-      .coupon-row-inner
-        
-        .sponsor-image
-          == image_tag("patrocinadores-colorido/bodytech@2x.png", width: "240")
-        .coupon-info
-          h2 10% na compra pelo site
-          p Curabitur blandit tempus porttitor. Doec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. 
-          .coupon-image
-            == image_tag("bar-code.png", width: "281")
-          .coupon-code
-            p #10gdr899fg
+      .coupon-row
+        .coupon-row-inner
+          
+          .sponsor-image
+            == image_tag("patrocinadores-colorido/bodytech@2x.png", width: "240")
+          .coupon-info
+            h2 10% na compra pelo site
+            p Curabitur blandit tempus porttitor. Doec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. 
+            .coupon-image
+              == image_tag("bar-code.png", width: "281")
+            .coupon-code
+              p #10gdr899fg
