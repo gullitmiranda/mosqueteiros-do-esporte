@@ -1,10 +1,29 @@
 - @title= 'Confirmar pagamento'
+- @page_class= 'page-payment'
 
-header.page-header
+header.page-header.light
   .page-header-inner
-    h1 Confirmar pagamento
+    h1 Revise seu investimento
+    h2.green Ninguém cruza a linha de chegada sozinho. Muita gente faz parte desse processo e queremos demais que você também se sinta parte dessa realização.
 
-section.featured-projects
-  h1 Confirmar pagamento
-  p Valor a ser pago #{number_to_currency(@payment.amount, precision: 0)}
-  = link_to 'Pagar com paypal', checkout_payment_path(@payment), class: 'button invest', method: :post
+section.payment
+  .payment-inner
+    
+    #payment-main
+      h3 Muito obrigado! Você está a um passo de fazer parte da vitória deste atleta.
+      p Valor a ser pago #{number_to_currency(@payment.amount, precision: 0)}
+      = link_to 'Pagar com paypal', checkout_payment_path(@payment), class: 'button invest', method: :post
+
+      == image_tag("paypal-protecao.png", width: "100")
+
+    #payment-sidebar
+      .faq
+        .row
+          .q 1. Existe devolução do dinheiro?
+          .a Curabitur blandit tempus porttitor. Doec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. 
+        .row
+          .q 2. Posso colocar minha marca?
+          .a Curabitur blandit tempus porttitor. Doec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. 
+        .row
+          .q 3. Como eu conheço o atleta?
+          .a Curabitur blandit tempus porttitor. Doec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. 

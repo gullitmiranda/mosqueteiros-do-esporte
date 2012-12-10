@@ -4,12 +4,12 @@ header
       font-weight: bold
       text-align: center
       letter-spacing: -.03em
-    
+      
+      &.green
+        color: $green
     h1  
       +adjust-font-size-to(38px)
       +adjust-leading-to(2)
-      &.green
-        color: $green
     
     h2
       +adjust-font-size-to(21px)
@@ -17,6 +17,8 @@ header
       color: #555
       +padding-leader(.5)
       +padding-trailer(.5)
+      width: 80%
+      margin: 0 auto
 
     &.bg-white
       background-color: $white
