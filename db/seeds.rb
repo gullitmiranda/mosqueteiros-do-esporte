@@ -85,7 +85,11 @@
 
 # Project.find(5).update_attributes(expires_at: Date.yesterday)
 
-Page.create!(title: 'O que é')
-Page.create!(title: 'Seja um atleta')
-Page.create!(title: 'Termos')
-Page.create!(title: 'Privacidade')
+# Page.create!(title: 'O que é')
+# Page.create!(title: 'Seja um atleta')
+# Page.create!(title: 'Termos')
+# Page.create!(title: 'Privacidade')
+
+Project.all.each do |project|
+  project.update_attributes(category: 'Maratona')
+end
