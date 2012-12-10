@@ -10,40 +10,43 @@ header.page-header.dark
       span.place == @project.location
     
     .nav-project
-      ul.nav.nav-tabs
+      ul.nav.nav-tabs.js-project-tabs
         li.active
-          a href="#" Sobre
+          a href="#project-description" data-toggle="tab" Sobre
         li
-          a href="#" Investidores
+          a href="#investidores" data-toggle="tab" Investidores
 
-
-
-      
 
 
 section.project-details
   .project-details-inner
-    #investidores
-      h1 Investidores
 
-      - @project.payments.completed.collect(&:user).uniq(&:id).each do |user|
-        p == image_tag(user.avatar.regular, width: 32, height: 32)
-        p = user.name
+    .tab-content
 
+      #project-description.tab-pane.active
+        .share
+          .facebook
+            .fb-like data-href="http://blog.startae.com.br" data-send="true" data-width="580" data-show-faces="true" show-faces="false"
+        
+        - if @project.video.present?
+          == @project.video
+        - else
+          == image_tag(@project.image.regular, width: 640)
 
-    .share
-      .facebook
-        .fb-like data-href="http://blog.startae.com.br" data-send="true" data-width="580" data-show-faces="true" show-faces="false"
+        h1 Sobre o Projeto
+        == @project.body
 
-    .project-description
-      
-      - if @project.video.present?
-        == @project.video
-      - else
-        == image_tag(@project.image.regular, width: 640)
+      #investidores.tab-pane
+        h1 Investidores
 
-      h1 Sobre o Projeto
-      == @project.body
+        .investors
+          - @project.payments.completed.collect(&:user).uniq(&:id).each do |user|
+            .investor-row
+              .avatar
+                == image_tag(user.avatar.regular, width: 32, height: 32)
+              .meta
+                h2 #{{user.name.split(" ").first}} #{{user.name.split(" ").last}}
+
 
     .project-sidebar
       .project-stats

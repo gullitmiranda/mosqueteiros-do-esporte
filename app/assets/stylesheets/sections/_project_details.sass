@@ -8,8 +8,46 @@
 .project-details-inner
   +container
 
-.project-description
+.tab-content
   +span-columns(11, 16)
+  +padding-trailer(1)
+
+#investidores
+  +adjust-font-size-to(15px)
+  +adjust-leading-to(1)
+  color: #7e7a77
+  +padding-trailer(1)
+
+  h1
+    color: $orange
+    font-weight: bold
+    +adjust-font-size-to(26px)
+    +adjust-leading-to(1)
+    text-transform: uppercase
+    +padding-leader(1)
+  
+  .investors
+    +padding-leader(1)
+    
+    .investor-row
+      border-bottom: 1px dotted $gray-lighter
+      +padding-leader(.5)
+      +padding-trailer(.5)
+      +pie-clearfix
+      .avatar
+        +inline-block
+        img
+          +box-shadow(0 0 2px rgba($black, .4))
+      .meta
+        +inline-block
+        margin-left: 10px
+        vertical-align: top
+        h2
+          font-weight: bold
+          color: $gray
+
+
+#project-description
   +adjust-font-size-to(15px)
   +adjust-leading-to(1)
   color: #7e7a77
@@ -42,6 +80,7 @@
   +span-columns(5 omega, 16)
   background-color: #f8f6f3
   +pie-clearfix
+  +margin-leader(1)
 
   .project-stats
     .overview
