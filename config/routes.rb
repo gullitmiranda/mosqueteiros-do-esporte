@@ -1,4 +1,6 @@
 Mosqueteiros::Application.routes.draw do
+  get "pages/show"
+
   get "payments/create"
 
   resources :projects, only: [:index, :show]
@@ -34,7 +36,8 @@ Mosqueteiros::Application.routes.draw do
     end
   end
 
-
+  match ':slug' => 'pages#show', as: :page
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

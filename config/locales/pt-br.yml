@@ -206,6 +206,7 @@ pt-BR:
     models:
       user: Usuário
       project: Projeto
+      page: Página
     attributes:
       user:
         password: Senha
@@ -223,6 +224,10 @@ pt-BR:
         expires_at: Prazo
         published: Publicado
         featured: Destaque
+      page:
+        title: Título
+        body: Conteúdo
+        published: Publicado
     errors:
       <<: *errors
   views:
