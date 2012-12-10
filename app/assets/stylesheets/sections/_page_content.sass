@@ -5,24 +5,16 @@ body.section-page-content
 
     h1, h2, h3, h4, h5
 
-    h1
-      +adjust-font-size-to(28px)
+    h1, h2
+      +adjust-font-size-to(26px)
       +adjust-leading-to(1)
-      color: $blue
-      font-weight: 800
-      border-bottom: 1px solid $gray-lighter
-      padding-bottom: 15px
+      color: $orange
+      font-weight: bold
       +margin-trailer(1)
+      text-transform: uppercase
 
-    h2, p, ul, ol
-      color: $gray-darker
-    
-    h2
-      +adjust-font-size-to(24px)
-      +adjust-leading-to(1)
-      color: $gray-darker
-      font-weight: 800
-      +padding-leader(1)
+    p, ul, ol
+      color: $gray
 
     h3
       +adjust-font-size-to(20px)
@@ -43,6 +35,8 @@ body.section-page-content
       font-weight: normal
       +margin-leader(.5)
       +margin-trailer(1)
+      +adjust-font-size-to(15px)
+      +adjust-leading-to(.9)
 
     ul
       +adjust-leading-to(1)
