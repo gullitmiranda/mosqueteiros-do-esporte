@@ -212,6 +212,7 @@ pt-BR:
         password: Senha
       project:
         title: Título
+        category: Categoria
         created_at: Cadastrado em
         updated_at: Atualizdo em
         image: Imagem

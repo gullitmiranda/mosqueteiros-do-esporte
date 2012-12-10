@@ -4,6 +4,7 @@ ActiveAdmin.register Project do
   menu label: 'Projetos'
   
   filter :title
+  filter :category
   filter :goal
   filter :expires_at
   filter :name
@@ -28,6 +29,7 @@ ActiveAdmin.register Project do
   show title: :title do |project|
     attributes_table do
       row :title
+      row :category
       row :image do
         image_tag(project.image.regular, width: 640, height: 430)
       end
