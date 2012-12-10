@@ -15,8 +15,19 @@ section.payment
         p Valor a ser pago <b>#{number_to_currency(@payment.amount, precision: 0)}</b>
       
       .payment-action
-        = link_to 'Pagar com paypal', checkout_payment_path(@payment), class: 'button invest', method: :post
-        == image_tag("paypal-protecao.png", width: "100")
+        - if current_user.credit > @payment.amount
+          p Você tem <b>#{number_to_currency(current_user.credit, precision: 0)}</b> em crédito. Parte desse crédito será usado para fazer o pagamento.
+          = link_to "Usar #{number_to_currency(@payment.amount, precision: 0)} do meu crédito", checkout_payment_path(@payment), class: 'button invest', method: :post
+        - elsif current_user.credit == @payment.amount
+          p Você tem <b>#{number_to_currency(current_user.credit, precision: 0)}</b> em crédito. Esse crédito será usado para fazer o pagamento.
+          = link_to "Usar meus #{number_to_currency(@payment.amount, precision: 0)} de crédito", checkout_payment_path(@payment), class: 'button invest', method: :post
+        - elsif current_user.credit > 0
+          p Você tem <b>#{number_to_currency(current_user.credit, precision: 0)}</b> em crédito. Esse crédito será usado para fazer parte do pagamento.
+          = link_to "Pagar #{number_to_currency(@payment.amount - current_user.credit, precision: 0)} com paypal", checkout_payment_path(@payment), class: 'button invest', method: :post
+          == image_tag("paypal-protecao.png", width: "100")
+        - else
+          = link_to "Pagar com paypal", checkout_payment_path(@payment), class: 'button invest', method: :post
+          == image_tag("paypal-protecao.png", width: "100")
 
     #payment-sidebar
       

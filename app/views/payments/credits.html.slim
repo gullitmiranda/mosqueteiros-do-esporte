@@ -1,7 +1,7 @@
 header.page-header.light.bg-white
   .page-header-inner
     h1 Minha conta
-    h2 Veja todos os projetos que você investiu e seus cupons
+    h2 Veja seus créditos e seus cupons
 
 - if @payments.any?
   .section-investments
@@ -9,7 +9,7 @@ header.page-header.light.bg-white
       header.section-header
         h1 <span style="background-color: #fff;">Meus créditos</span>
       
-      h2 Alguns dos projetos que você apoiou não chegaram ao objetivo.      
+      h2 Você ganha créditos quando algum dos projetos que você apoiou não chega ao objetivo.
       p Você tem <b class="valor">#{number_to_currency(current_user.credit, precision: 0)}</b> em créditos para reinvestir em outros projetos.
 
   section.coupons

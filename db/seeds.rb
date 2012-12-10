@@ -93,3 +93,7 @@
 # Project.all.each do |project|
 #   project.update_attributes(category: 'Maratona')
 # end
+
+User.all.each do |user|
+  user.update_attributes({credit: user.payments_from_failed_projects.pluck(:amount).sum}, without_protection: true)
+end

@@ -40,10 +40,6 @@ class User < ActiveRecord::Base
     payments.completed.joins(:project).where('projects.expires_at <= ?', Date.today).where('projects.success = false')
   end
 
-  def credit
-    payments_from_failed_projects.pluck(:amount).sum
-  end
-
   def first_name
     name.split(" ").first    
   end
