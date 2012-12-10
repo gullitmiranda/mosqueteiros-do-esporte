@@ -110,6 +110,10 @@ header
   +box-shadow(0 1px 1px rgba(0,0,0,.2))
   +margin-trailer(1)
 
+  &:hover
+    +box-shadow(0 1px 6px rgba(0,0,0,.5))
+    background-color: #fffff1
+
   a
     text-decoration: none
 
@@ -122,10 +126,11 @@ header
     img
       float: left
   
-  .project-details
+  .project-info
     +span-columns(5 omega, 8)
     +padding-leader(1)
     position: relative
+    background-color: transparent
 
     &:after
       position: absolute
