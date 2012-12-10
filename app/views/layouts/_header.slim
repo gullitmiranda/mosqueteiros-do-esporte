@@ -11,11 +11,11 @@ header#header-page role="banner"
     nav.nav-page role="navigation"
       ul
         li.o_que
-          a href="#{projects_path}" title="O que é o mosqueteiros?" O que é <span>o mosqueteiros?</span>
+          a href="#{sobre_path}" title="O que é o mosqueteiros?" O que é <span>o mosqueteiros?</span>
         li.conheca
           a href="#{projects_path}" title="Conheça grandes esportistas" Conheça <span>grandes esportistas</span>
         li.seja_um
-          a href="#{projects_path}" title="Seja um atleta patrocinado" Seja um <span>atleta patrocinado</span>
+          a href="#{seja_path}" title="Seja um atleta patrocinado" Seja um <span>atleta patrocinado</span>
 
     nav.nav-user role="navigation"
       ul
@@ -23,12 +23,14 @@ header#header-page role="banner"
           li.item-avatar
             .user-avatar.small
               .user-avatar-inner
-                == image_tag(current_user.avatar.regular, width: 32, height: 32)
+                a href="#{{credits_payments_path}}"
+                  == image_tag(current_user.avatar.regular, width: 32, height: 32)
 
-          li.item-username <b>#{{current_user.first_name}}</b>
-
-          - if current_user.payments.any?
-            li.item-username = link_to 'Meus cupons e créditos', credits_payments_path
+          li.item-username
+            a.username href="#{{credits_payments_path}}"
+              | <b>#{{current_user.name.split(" ").first}} #{{current_user.name.split(" ").last}}</b>
+            - if current_user.payments.any?
+              = link_to 'Minha Conta', credits_payments_path
 
           li.item-logout
             a href="#{{destroy_user_session_path}}" title="Sair" Sair
