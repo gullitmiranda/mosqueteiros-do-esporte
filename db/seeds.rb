@@ -90,6 +90,6 @@
 # Page.create!(title: 'Termos')
 # Page.create!(title: 'Privacidade')
 
-Project.all.each do |project|
-  project.update_attributes(category: 'Maratona')
-end
+# Project.all.each do |project|
+#   project.update_attributes(category: 'Maratona')
+# end

@@ -7,11 +7,24 @@ class PaymentsController < ApplicationController
     redirect_to root_url unless @payment.present? or current_user.payments.any?
   end
 
+  # credit = 60
+  # amount = 60
+  # if amount > credit
+  #   credit_used = amount - credit
+  # else
+  #   credit_used = amount
+  # end # 0
+  # to_pay = amount - credit_used # 30
+  # credit -= credit_used # 200
+
   def create
     @payment = Payment.new(params[:payment])
     
     if params[:payment][:amount].to_i >= 60 and @payment.project.active?
       @payment.user = current_user
+      # if current_user.credit > 0
+      #   @payment.amount = 
+      # end
       @payment.save!
       redirect_to review_payment_path(@payment)
     else
