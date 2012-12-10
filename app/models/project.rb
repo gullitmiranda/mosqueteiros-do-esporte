@@ -54,6 +54,7 @@ class Project < ActiveRecord::Base
   end
 
   def update_status
-    self.success = pledged == goal
+    self.success = pledged >= goal
+    true
   end
 end
