@@ -14,6 +14,10 @@ ActiveAdmin.register Project do
     column :id
     column :title
     column :category
+    column :success, sortable: :success do |project|
+      (project.success? ? '<span class="label success">Sim</span>' : '<span class="label">Não</span>').html_safe
+    end
+
     column :published, sortable: :published do |project|
       (project.published? ? '<span class="label success">Sim</span>' : '<span class="label">Não</span>').html_safe
     end
@@ -23,7 +27,9 @@ ActiveAdmin.register Project do
     column :goal, sortable: :goal do |project|
       number_to_currency(project.goal)
     end
-    column :expires_at
+    column :expires_at, sortable: :expires_at do |project|
+      l project.expires_at
+    end
     default_actions
   end
   

@@ -196,7 +196,7 @@ pt-BR:
     formats:
       default: ! '%A, %d de %B de %Y, %H:%M h'
       long: ! '%A, %d de %B de %Y, %H:%M h'
-      short: ! '%d/%m, %H:%M h'
+      short: ! '%d/%m/%Y, %H:%M h'
     pm: ''
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   activemodel:
@@ -223,16 +223,19 @@ pt-BR:
         location: Cidade-UF
         video: Vídeo
         excerpt: Resumo
-        goal: Valor do Projeto
+        goal: Objetivo
         expires_at: Prazo
         published: Publicado
         featured: Destaque
+        success: Sucesso
       page:
         title: Título
         body: Conteúdo
         published: Publicado
       payment:
         amount: Valor
+        user: Investidor
+        project: Projeto
     errors:
       <<: *errors
   views:
