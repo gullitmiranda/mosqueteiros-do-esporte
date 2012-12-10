@@ -26,8 +26,7 @@ Mosqueteiros::Application.routes.draw do
   resources :payments, only: [:show, :create] do
     collection do
       get :success
-      get :cancel
-      post :notify
+      get :credits
     end
     member do
       get :review
