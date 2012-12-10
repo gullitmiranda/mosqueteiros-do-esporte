@@ -16,14 +16,14 @@ Mosqueteiros::Application.routes.draw do
   end
 
   get 'frontend/:template' => 'frontend#show'
-
   get 'frontend(/index)' => 'frontend#index'
-
   get "frontend/index"
 
   root to: 'home#index'
-
   get "home/index"
+
+  match "sobre" => "about#index", as: :about
+  match "seja" => "start#index", as: :start
 
   resources :payments, only: [:show, :create] do
     collection do

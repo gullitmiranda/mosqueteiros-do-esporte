@@ -83,8 +83,8 @@
       
       li    
         float: left
-        display: inline
-        margin-left: 5px
+        +inline-block
+        margin-left: 0
         
         &.item-avatar
           vertical-align: middle
@@ -100,70 +100,43 @@
               text-align: center
 
         &.item-username
-          padding-right: 5px
+          padding-right: 10px
           color: $gray-light
-          b
-            color: $gray
-            
-        &.item-preferences
-
+          +inline-block
+          +adjust-font-size-to(11px)
+          +adjust-leading-to(.8)
+          vertical-align: text-top !important
           a
-            color: #afafad
-            background-color: #e4e4e1
-            +inline-block
-            font-weight: bold
+            color: $gray-dark
             text-decoration: none
-            position: relative
-            width: 28px
-            height: 28px
-         
-            &:before
-              content: ""
-              position: relative
-              top: 6px
-              left: 6px
-              float: left
-              width: 16px
-              height: 16px
-              margin: 0
-              // +small-elements-sprite(icon-preferences)
-              +opacity(.3)
-
-            &.active
-              background-color: $link-color
-              color: $white            
-              &:before
-                +opacity(.6)
-
-            &:hover
-              background-color: $link-color
-              color: $white            
-              &:before
-                +opacity(1)
-         
-          .preferences-text
+          
+          .username
             display: block
-            +hide-text
-            width: 1px
+            +adjust-font-size-to(13px)
+            +adjust-leading-to(.8)
 
         &.item-logout
+          border-left: 1px dotted $gray-lighter
+          height: 32px
+          padding-left: 5px
+          
           a
-            color: #8b8b8b
-            background-color: #e4e4e1
+            color: $gray-dark
             +inline-block
-            padding-left: 1em
-            padding-right: 1em
+            padding-left: 5px
+            padding-right: 5px
             font-weight: bold
-            +padding-leader(.2)
-            +padding-trailer(.2)
+            +adjust-font-size-to(13px)
+            +adjust-leading-to(.8)
             text-decoration: none
+            // line-height: 32px
+            vertical-align: top
             
             &:active
               +effect-click-down
             
             &:hover
-              background-color: $link-color
-              color: #333
+              color: $gray-darker
 
 body.o_que .nav-page li.o_que, body.conheca .nav-page li.conheca, body.seja_um .nav-page li.seja_um
   a

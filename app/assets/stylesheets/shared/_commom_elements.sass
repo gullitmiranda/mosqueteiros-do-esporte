@@ -123,6 +123,21 @@ header
     position: relative
     z-index: 1
 
+    .project-category
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 100%
+      background-color: rgba($orange, .8)
+      color: $white
+      +text-shadow(0 1px 0 rgba($black, .4))
+      +adjust-leading-to(.9)
+      +adjust-font-size-to(16px)
+      font-weight: bold
+      text-align: center
+      padding: 10px
+      text-transform: uppercase
+
     img
       float: left
   
@@ -147,7 +162,7 @@ header
 
     h1
       color: $orange
-      +adjust-font-size-to(20px)
+      +adjust-font-size-to(18px)
       +adjust-leading-to(1)
       font-weight: 700
     
