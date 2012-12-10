@@ -1,5 +1,7 @@
 #= require jquery
 #= require jquery_ujs
+#= require jquery.validate
+#= require messages_pt_BR
 #= require facebook_popup
 #= require close_for_facebook_login
 
@@ -25,3 +27,13 @@ $ ->
   $('.js-project-tabs').click (event) ->
     event.preventDefault()
     $(this).tab('show')
+
+  $('#hidden-form').validate({
+    errorLabelContainer: '#error-container',
+    rules: {
+      'payment[amount]': {
+        required: true,
+        min: 60
+      }
+    }
+  })

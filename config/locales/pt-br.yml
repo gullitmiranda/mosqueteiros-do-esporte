@@ -207,8 +207,10 @@ pt-BR:
       user: Usuário
       project: Projeto
       page: Página
+      payment: Pagamentos
     attributes:
       user:
+        name: Nome
         password: Senha
       project:
         title: Título
@@ -229,6 +231,8 @@ pt-BR:
         title: Título
         body: Conteúdo
         published: Publicado
+      payment:
+        amount: Valor
     errors:
       <<: *errors
   views:
