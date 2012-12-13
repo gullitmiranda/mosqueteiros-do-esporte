@@ -7,4 +7,4 @@ header.page-header.dark
 
 section.content
   .content-inner
-    = simple_format(@page.body)
+    = @page.body.html_safe
