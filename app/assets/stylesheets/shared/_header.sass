@@ -31,12 +31,14 @@
     font-weight: 700
     +adjust-font-size-to(17px)
     +adjust-leading-to(1)
-    text-transform: uppercase
 
     a
       color: #888481
       text-decoration: none
       display: block
+      
+      b
+        text-transform: uppercase
 
       span
         display: block
@@ -44,7 +46,7 @@
         +adjust-font-size-to(14px)
         +adjust-leading-to(.8)
         color: #b5b2af
-        text-transform: lowercase
+        text-transform: default
 
       &:hover
         color: darken(#888481, 20%)

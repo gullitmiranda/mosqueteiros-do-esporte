@@ -212,18 +212,24 @@ header
         +padding-trailer(.5)
         li
           +inline-block
-          width: 32.333%
           color: $gray
           +adjust-font-size-to(10px)
           +adjust-leading-to(.8)
           text-transform: uppercase
-          letter-spacing: -0.08em
+
+          &.remaining-days
+            width: 32.333333%
+          &.goal
+            width: 42.333333%
+          &.pledged
+            width: 22.333333%
           
           b
             display: block
             font-weight: bold
             +adjust-font-size-to(17px)
             +adjust-leading-to(1)
+            letter-spacing: -0.099em
 
 .projects-actions
   +span-columns(16,16)
