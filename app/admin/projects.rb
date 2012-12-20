@@ -37,6 +37,11 @@ ActiveAdmin.register Project do
     attributes_table do
       row :title
       row :category
+      row :featured_image do
+        if project.featured_image?
+          image_tag(project.featured_image.regular, width: 160)
+        end
+      end
       row :image do
         image_tag(project.image.regular, width: 640, height: 430)
       end

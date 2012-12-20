@@ -2,7 +2,10 @@
   = link_to project do
     .project-image
       .project-image-innner
-        == image_tag(project.image.featured, width: "160")
+        - if project.featured_image?
+          == image_tag(project.featured_image.regular, width: "160")
+        - else 
+          == image_tag(project.image.featured, width: "160")
         .project-category == project.category
     .project-info
       h1 == project.title

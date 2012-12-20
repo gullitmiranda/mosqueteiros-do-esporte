@@ -217,6 +217,7 @@ pt-BR:
         category: Categoria
         created_at: Cadastrado em
         updated_at: Atualizdo em
+        featured_image: Imagem Vertical
         image: Imagem
         body: Conteúdo
         name: Nome

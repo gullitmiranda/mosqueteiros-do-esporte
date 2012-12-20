@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  attr_accessible :title, :image, :body, :name, 
+  attr_accessible :title, :image, :featured_image, :body, :name, 
                   :location, :video, :excerpt, :goal, 
                   :expires_at, :published, :featured,
                   :remote_image_url, :success, :category
@@ -10,6 +10,7 @@ class Project < ActiveRecord::Base
   has_many :payments, dependent: :destroy
 
   mount_uploader :image, ProjectImageUploader
+  mount_uploader :featured_image, ProjectFeaturedImageUploader
 
   before_save :update_status
 
