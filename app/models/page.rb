@@ -9,5 +9,10 @@ class Page < ActiveRecord::Base
     if slug.blank?
       self.slug = title.parameterize
     end
+
+    if slug != slug.parameterize
+      self.slug = slug.parameterize
+    end
   end
+
 end
