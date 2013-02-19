@@ -9,7 +9,7 @@ class PaymentsController < ApplicationController
 
   def create
     @payment = Payment.new(params[:payment])
-    
+
     if params[:payment][:amount].to_i >= 60 and @payment.project.active?
       @payment.user = current_user
       @payment.save!
@@ -25,6 +25,7 @@ class PaymentsController < ApplicationController
 
   def checkout
     @payment = Payment.find(params[:id])
+    @payment.amount = 5
 
     if current_user.credit >= @payment.amount
       current_user.credit = current_user.credit - @payment.amount
