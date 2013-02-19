@@ -42,13 +42,14 @@ class Payment < ActiveRecord::Base
     self
   end
 
-  def incomplete?
-    not self.completed?
+  def cancel!
+    self.canceled = true
+    self.save!
+    self
   end
 
-  def unsubscribe!
-    client.renew!(self.identifier, :Cancel)
-    self.cancel!
+  def incomplete?
+    not self.completed?
   end
 
   private

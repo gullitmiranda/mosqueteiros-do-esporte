@@ -58,6 +58,9 @@ class PaymentsController < ApplicationController
   end
 
   def cancel
+    payment = Payment.find_by_token!(params[:token])
+    payment.cancel!
+    redirect_to payment.project
   end
 
   private
