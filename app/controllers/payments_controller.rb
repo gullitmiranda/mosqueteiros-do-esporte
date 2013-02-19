@@ -57,6 +57,9 @@ class PaymentsController < ApplicationController
     @payments = current_user.payments_from_failed_projects
   end
 
+  def cancel
+  end
+
   private
 
   def paypal_api_error(e)

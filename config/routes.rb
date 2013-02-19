@@ -28,6 +28,7 @@ Mosqueteiros::Application.routes.draw do
   resources :payments, only: [:show, :create] do
     collection do
       get :success
+      get :cancel
       get :credits
     end
     member do
@@ -37,7 +38,7 @@ Mosqueteiros::Application.routes.draw do
   end
 
   match ':slug' => 'pages#show', as: :page
-  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
