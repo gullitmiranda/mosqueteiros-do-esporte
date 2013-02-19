@@ -25,7 +25,6 @@ class PaymentsController < ApplicationController
 
   def checkout
     @payment = Payment.find(params[:id])
-    @payment.amount = 5
 
     if current_user.credit >= @payment.amount
       current_user.credit = current_user.credit - @payment.amount
