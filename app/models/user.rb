@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
          :trackable,
          :validatable,
          :omniauthable
-  
+
   attr_accessible :email,
                   :password,
                   :password_confirmation,
@@ -18,21 +18,23 @@ class User < ActiveRecord::Base
                   :avatar
 
   validates :name, presence: true
-  
+
   mount_uploader :avatar, UserAvatarUploader
 
   has_many :payments, dependent: :destroy
-  
+
   def self.find_for_facebook_oauth(access_token, signed_in_resource = nil)
     data = access_token.info
 
     if user = self.find_by_email(data.email)
       user
     else
-      self.create!(email: data.email, 
-                   password: Devise.friendly_token[0,20], 
-                   name: data.name, 
-                   remote_avatar_url: data['image'].gsub!('square', 'normal'))
+      self.create!(email: data.email,
+                   password: Devise.friendly_token[0,20],
+                   name: data.name,
+                   remote_avatar_url: "https://graph.facebook.com/#{access_token.uid}/picture?type=large&width=256")
+                   # remote_avatar_url: data['image'].gsub!('square', 'normal'))
+
     end
   end
 
@@ -41,6 +43,6 @@ class User < ActiveRecord::Base
   end
 
   def first_name
-    name.split(" ").first    
+    name.split(" ").first
   end
 end
