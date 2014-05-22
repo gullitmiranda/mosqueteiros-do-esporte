@@ -1,32 +1,40 @@
-development:
+# PostgreSQL. Versions 8.2 and up are supported.
+db: &db
   adapter: postgresql
-  database: mosqueteiros_development
-  host: localhost
-  user: postgres
-  password:
+  encoding: unicode
   pool: 5
-  timeout: 5000
-  template: template0
+  username: postgres
+  password: postgres
+
+  # Connect on a TCP socket. Omitted by default since the client uses a
+  # domain socket that doesn't need configuration. Windows does not have
+  # domain sockets, so uncomment these lines.
+  host: localhost
+
+  # The TCP port the server listens on. Defaults to 5432.
+  # If your server runs on a different port number, change accordingly.
+  #port: 5432
+
+  # Schema search path. The server defaults to $user,public
+  #schema_search_path: myapp,sharedapp,public
+
+  # Minimum log levels, in increasing order:
+  #   debug5, debug4, debug3, debug2, debug1,
+  #   log, notice, warning, error, fatal, and panic
+  # Defaults to warning.
+  #min_messages: notice
+
+development:
+  <<: *db
+  database: mosqueteiros_development
 
 test: &test
-  adapter: postgresql
+  <<: *db
   database: mosqueteiros_test
-  host: localhost
-  user: postgres
-  password:
-  pool: 5
-  timeout: 5000
-  template: template0
 
 production:
-  adapter: postgresql
+  <<: *db
   database: mosqueteiros_production
-  host: localhost
-  user: postgres
-  password:
-  pool: 5
-  timeout: 5000
-  template: template0
 
 cucumber:
   <<: *test

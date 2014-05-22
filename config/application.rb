@@ -1,5 +1,9 @@
 require File.expand_path('../boot', __FILE__)
 
+require 'dotenv'
+Dotenv.load if defined? Dotenv
+
+
 # Pick the frameworks you want:
 require "active_record/railtie"
 require "action_controller/railtie"
@@ -17,7 +21,7 @@ end
 
 module Mosqueteiros
   class Application < Rails::Application
-    
+
     config.i18n.default_locale = 'pt-BR'
     config.time_zone = 'Brasilia'
     config.generators.stylesheet_engine = :sass

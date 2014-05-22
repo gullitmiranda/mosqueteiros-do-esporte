@@ -1,5 +1,5 @@
-if Rails.env.production?
-  CarrierWave.configure do |config|
+CarrierWave.configure do |config|
+  if Rails.env.production?
     config.cache_dir = Rails.root.join 'tmp', 'uploads'
     config.fog_credentials = {
       provider:               'AWS',
@@ -11,6 +11,8 @@ if Rails.env.production?
     config.storage = :fog
     config.enable_processing = false if Rails.env.test? or Rails.env.cucumber?
     config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}
+  else
+    config.storage = :file
   end
 end
 
